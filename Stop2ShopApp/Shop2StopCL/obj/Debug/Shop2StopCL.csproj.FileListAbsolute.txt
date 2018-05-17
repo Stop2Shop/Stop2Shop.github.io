@@ -4,3 +4,9 @@ E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopPL\Shop2StopCL\obj\Debug\Shop2StopCL.c
 E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopPL\Shop2StopCL\obj\Debug\Shop2StopCL.csproj.CoreCompileInputs.cache
 E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopPL\Shop2StopCL\obj\Debug\Shop2StopCL.dll
 E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopPL\Shop2StopCL\obj\Debug\Shop2StopCL.pdb
+E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Shop2StopCL\bin\Debug\Shop2StopCL.dll
+E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Shop2StopCL\bin\Debug\Shop2StopCL.pdb
+E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Shop2StopCL\obj\Debug\Shop2StopCL.csprojResolveAssemblyReference.cache
+E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Shop2StopCL\obj\Debug\Shop2StopCL.csproj.CoreCompileInputs.cache
+E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Shop2StopCL\obj\Debug\Shop2StopCL.dll
+E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Shop2StopCL\obj\Debug\Shop2StopCL.pdb
