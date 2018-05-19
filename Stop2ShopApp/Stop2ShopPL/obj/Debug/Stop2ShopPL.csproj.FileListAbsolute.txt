@@ -228,3 +228,5 @@ F:\Working\Stop2ShopApp\Stop2ShopPL\bin\System.Web.WebPages.xml
 F:\Working\Stop2ShopApp\Stop2ShopPL\bin\System.Web.WebPages.Deployment.xml
 F:\Working\Stop2ShopApp\Stop2ShopPL\bin\System.Web.WebPages.Razor.xml
 F:\Working\Stop2ShopApp\Stop2ShopPL\obj\Debug\Stop2ShopPL.csproj.CopyComplete
+F:\Working\Stop2ShopApp\Stop2ShopPL\obj\Debug\Stop2ShopPL.csprojAssemblyReference.cache
+F:\Working\Stop2ShopApp\Stop2ShopPL\bin\Microsoft.Web.Infrastructure.dll
