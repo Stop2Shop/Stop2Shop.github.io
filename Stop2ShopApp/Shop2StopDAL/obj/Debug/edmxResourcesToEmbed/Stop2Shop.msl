@@ -1,10 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-<<<<<<< HEAD
-  <EntityContainerMapping StorageEntityContainer="Stop2ShopModelStoreContainer" CdmEntityContainer="Stop2ShopEntities">
-=======
   <EntityContainerMapping StorageEntityContainer="Stop2ShopModelStoreContainer" CdmEntityContainer="Stop2ShopContext">
->>>>>>> master
     <EntitySetMapping Name="tbl_AREA">
       <EntityTypeMapping TypeName="Stop2ShopModel.tbl_AREA">
         <MappingFragment StoreEntitySet="tbl_AREA">

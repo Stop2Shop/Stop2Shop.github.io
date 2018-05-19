@@ -4,11 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-<<<<<<< HEAD
-      <Diagram DiagramId="c7b8fb087c3a48b9bedf2a8a82b45057" Name="Diagram1">
-=======
-      <Diagram DiagramId="372d0634d13e48b3bb16600aaf295f92" Name="Diagram1" ZoomLevel="80">
->>>>>>> master
+      <Diagram DiagramId="facdf625e31543ff81b2eed062cf46c2" Name="Diagram1" ZoomLevel="91">
         <EntityTypeShape EntityType="Stop2ShopModel.tbl_AREA" Width="1.5" PointX="17.75" PointY="17.125" IsExpanded="true" />
         <EntityTypeShape EntityType="Stop2ShopModel.tbl_BIN" Width="1.5" PointX="5.25" PointY="22.375" IsExpanded="true" />
         <EntityTypeShape EntityType="Stop2ShopModel.tbl_CUSTOMER" Width="1.5" PointX="3.75" PointY="7.875" IsExpanded="true" />
