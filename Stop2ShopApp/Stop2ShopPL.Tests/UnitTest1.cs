@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Stop2ShopPL.Tests
+namespace Stop2Shop.Tests
 {
     [TestClass]
     public class UnitTest1
