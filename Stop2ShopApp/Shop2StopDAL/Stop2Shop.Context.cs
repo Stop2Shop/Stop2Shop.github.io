@@ -13,10 +13,17 @@ namespace Shop2StopDAL
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
+<<<<<<< HEAD
     public partial class Stop2ShopEntities : DbContext
     {
         public Stop2ShopEntities()
             : base("name=Stop2ShopEntities")
+=======
+    public partial class Stop2ShopContext : DbContext
+    {
+        public Stop2ShopContext()
+            : base("name=Stop2ShopContext")
+>>>>>>> master
         {
         }
     

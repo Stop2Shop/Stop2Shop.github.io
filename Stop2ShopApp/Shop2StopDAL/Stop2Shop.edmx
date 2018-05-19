@@ -2475,7 +2475,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+<<<<<<< HEAD
         <EntityContainer Name="Stop2ShopEntities" annotation:LazyLoadingEnabled="true">
+=======
+        <EntityContainer Name="Stop2ShopContext" annotation:LazyLoadingEnabled="true">
+>>>>>>> master
           <EntitySet Name="tbl_AREA" EntityType="Self.tbl_AREA" />
           <EntitySet Name="tbl_BIN" EntityType="Self.tbl_BIN" />
           <EntitySet Name="tbl_CUSTOMER" EntityType="Self.tbl_CUSTOMER" />
@@ -2685,7 +2689,11 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+<<<<<<< HEAD
         <EntityContainerMapping StorageEntityContainer="Stop2ShopModelStoreContainer" CdmEntityContainer="Stop2ShopEntities">
+=======
+        <EntityContainerMapping StorageEntityContainer="Stop2ShopModelStoreContainer" CdmEntityContainer="Stop2ShopContext">
+>>>>>>> master
           <EntitySetMapping Name="tbl_AREA">
             <EntityTypeMapping TypeName="Stop2ShopModel.tbl_AREA">
               <MappingFragment StoreEntitySet="tbl_AREA">

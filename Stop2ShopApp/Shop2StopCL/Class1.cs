@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Shop2StopCL
+namespace Stop2ShopCL
 {
     public class Class1
     {
