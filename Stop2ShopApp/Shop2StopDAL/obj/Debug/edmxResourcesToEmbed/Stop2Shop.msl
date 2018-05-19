@@ -1,0 +1,556 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Stop2ShopModelStoreContainer" CdmEntityContainer="Stop2ShopEntities">
+    <EntitySetMapping Name="tbl_AREA">
+      <EntityTypeMapping TypeName="Stop2ShopModel.tbl_AREA">
+        <MappingFragment StoreEntitySet="tbl_AREA">
+          <ScalarProperty Name="AREA_ID" ColumnName="AREA_ID" />
+          <ScalarProperty Name="AREA_NAME" ColumnName="AREA_NAME" />
+          <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+          <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+          <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+          <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+          <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+          <ScalarProperty Name="PIN_CODE" ColumnName="PIN_CODE" />
+          <ScalarProperty Name="CITY" ColumnName="CITY" />
+          <ScalarProperty Name="DISTRICT" ColumnName="DISTRICT" />
+          <ScalarProperty Name="STATE_ID" ColumnName="STATE_ID" />
+          <ScalarProperty Name="ROWGUID" ColumnName="ROWGUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_BIN">
+      <EntityTypeMapping TypeName="Stop2ShopModel.tbl_BIN">
+        <MappingFragment StoreEntitySet="tbl_BIN">
+          <ScalarProperty Name="OWNER_ID" ColumnName="OWNER_ID" />
+          <ScalarProperty Name="BIN_ID" ColumnName="BIN_ID" />
+          <ScalarProperty Name="RACK_ID" ColumnName="RACK_ID" />
+          <ScalarProperty Name="BIN_DESC" ColumnName="BIN_DESC" />
+          <ScalarProperty Name="DEF_BIN" ColumnName="DEF_BIN" />
+          <ScalarProperty Name="ROWGUID" ColumnName="ROWGUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_CUSTOMER">
+      <EntityTypeMapping TypeName="Stop2ShopModel.tbl_CUSTOMER">
+        <MappingFragment StoreEntitySet="tbl_CUSTOMER">
+          <ScalarProperty Name="CUSTOMER_ID" ColumnName="CUSTOMER_ID" />
+          <ScalarProperty Name="CUST_NAME" ColumnName="CUST_NAME" />
+          <ScalarProperty Name="DATE_OF_BIRTH" ColumnName="DATE_OF_BIRTH" />
+          <ScalarProperty Name="GENDER" ColumnName="GENDER" />
+          <ScalarProperty Name="CUST_TY_ID" ColumnName="CUST_TY_ID" />
+          <ScalarProperty Name="EMAIL_ADDRESS" ColumnName="EMAIL_ADDRESS" />
+          <ScalarProperty Name="CREDIT_LIM" ColumnName="CREDIT_LIM" />
+          <ScalarProperty Name="CONTACT_NO_1" ColumnName="CONTACT_NO_1" />
+          <ScalarProperty Name="CONTACT_NO_2" ColumnName="CONTACT_NO_2" />
+          <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+          <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+          <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+          <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+          <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+          <ScalarProperty Name="ROWGUID" ColumnName="ROWGUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_CUSTOMER_ADDRESS">
+      <EntityTypeMapping TypeName="Stop2ShopModel.tbl_CUSTOMER_ADDRESS">
+        <MappingFragment StoreEntitySet="tbl_CUSTOMER_ADDRESS">
+          <ScalarProperty Name="CUSTOMER_ID" ColumnName="CUSTOMER_ID" />
+          <ScalarProperty Name="ADDRESS_TYPE" ColumnName="ADDRESS_TYPE" />
+          <ScalarProperty Name="ADDRESS_LINE_1" ColumnName="ADDRESS_LINE_1" />
+          <ScalarProperty Name="ADDRESS_LINE_2" ColumnName="ADDRESS_LINE_2" />
+          <ScalarProperty Name="ADDRESS_LINE_3" ColumnName="ADDRESS_LINE_3" />
+          <ScalarProperty Name="CITY" ColumnName="CITY" />
+          <ScalarProperty Name="AREA_ID" ColumnName="AREA_ID" />
+          <ScalarProperty Name="LANDMARK" ColumnName="LANDMARK" />
+          <ScalarProperty Name="STATE_ID" ColumnName="STATE_ID" />
+          <ScalarProperty Name="PIN_CODE" ColumnName="PIN_CODE" />
+          <ScalarProperty Name="SAME_AS_COMM" ColumnName="SAME_AS_COMM" />
+          <ScalarProperty Name="ROWGUID" ColumnName="ROWGUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_CUSTOMER_TYPE">
+      <EntityTypeMapping TypeName="Stop2ShopModel.tbl_CUSTOMER_TYPE">
+        <MappingFragment StoreEntitySet="tbl_CUSTOMER_TYPE">
+          <ScalarProperty Name="CUST_TY_ID" ColumnName="CUST_TY_ID" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+          <ScalarProperty Name="ROWGUID" ColumnName="ROWGUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_GROUP">
+      <EntityTypeMapping TypeName="Stop2ShopModel.tbl_GROUP">
+        <MappingFragment StoreEntitySet="tbl_GROUP">
+          <ScalarProperty Name="GROUP_ID" ColumnName="GROUP_ID" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="GROUP_NAME" ColumnName="GROUP_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ID_TABLE">
+      <EntityTypeMapping TypeName="Stop2ShopModel.tbl_ID_TABLE">
+        <MappingFragment StoreEntitySet="tbl_ID_TABLE">
+          <ScalarProperty Name="TABLE_ID" ColumnName="TABLE_ID" />
+          <ScalarProperty Name="END_RANGE" ColumnName="END_RANGE" />
+          <ScalarProperty Name="START_RANGE" ColumnName="START_RANGE" />
+          <ScalarProperty Name="TABLE_NAME" ColumnName="TABLE_NAME" />
+          <ScalarProperty Name="CURRENT_ID" ColumnName="CURRENT_ID" />
+          <ScalarProperty Name="ROWGUID" ColumnName="ROWGUID" />
+          <ScalarProperty Name="OWNER_ID" ColumnName="OWNER_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ITEM_TYPE">
+      <EntityTypeMapping TypeName="Stop2ShopModel.tbl_ITEM_TYPE">
+        <MappingFragment StoreEntitySet="tbl_ITEM_TYPE">
+          <ScalarProperty Name="ITEM_TYPE_ID" ColumnName="ITEM_TYPE_ID" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="ITEM_CATEGORY" ColumnName="ITEM_CATEGORY" />
+          <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+          <ScalarProperty Name="ROWGUID" ColumnName="ROWGUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_MENU">
+      <EntityTypeMapping TypeName="Stop2ShopModel.tbl_MENU">
+        <MappingFragment StoreEntitySet="tbl_MENU">
+          <ScalarProperty Name="MENU_ID" ColumnName="MENU_ID" />
+          <ScalarProperty Name="FORM_NAME" ColumnName="FORM_NAME" />
+          <ScalarProperty Name="PARENT_TITLE" ColumnName="PARENT_TITLE" />
+          <ScalarProperty Name="SHORT_KEY" ColumnName="SHORT_KEY" />
+          <ScalarProperty Name="SHORT_KEY_DESC" ColumnName="SHORT_KEY_DESC" />
+          <ScalarProperty Name="MENU_LEVEL" ColumnName="MENU_LEVEL" />
+          <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+          <ScalarProperty Name="MENU_SEQ" ColumnName="MENU_SEQ" />
+          <ScalarProperty Name="OPERATION" ColumnName="OPERATION" />
+          <ScalarProperty Name="ASSEMBLY_NAME" ColumnName="ASSEMBLY_NAME" />
+          <ScalarProperty Name="PROCESS" ColumnName="PROCESS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_PART_MFR_LOC_RACK_BIN">
+      <EntityTypeMapping TypeName="Stop2ShopModel.tbl_PART_MFR_LOC_RACK_BIN">
+        <MappingFragment StoreEntitySet="tbl_PART_MFR_LOC_RACK_BIN">
+          <ScalarProperty Name="OWNER_ID" ColumnName="OWNER_ID" />
+          <ScalarProperty Name="PART_RK_BN_ID" ColumnName="PART_RK_BN_ID" />
+          <ScalarProperty Name="SPARE_PART_ID" ColumnName="SPARE_PART_ID" />
+          <ScalarProperty Name="LOCATION_ID" ColumnName="LOCATION_ID" />
+          <ScalarProperty Name="RACK_ID" ColumnName="RACK_ID" />
+          <ScalarProperty Name="BIN_ID" ColumnName="BIN_ID" />
+          <ScalarProperty Name="FREE_QTY" ColumnName="FREE_QTY" />
+          <ScalarProperty Name="BLOCK_QTY" ColumnName="BLOCK_QTY" />
+          <ScalarProperty Name="PART_COST" ColumnName="PART_COST" />
+          <ScalarProperty Name="MRP" ColumnName="MRP" />
+          <ScalarProperty Name="TAX" ColumnName="TAX" />
+          <ScalarProperty Name="TAXABLE" ColumnName="TAXABLE" />
+          <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+          <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+          <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+          <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+          <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+          <ScalarProperty Name="STOCK_RECEIVED_DATE" ColumnName="STOCK_RECEIVED_DATE" />
+          <ScalarProperty Name="ROWGUID" ColumnName="ROWGUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_PAYMENT_MODE">
+      <EntityTypeMapping TypeName="Stop2ShopModel.tbl_PAYMENT_MODE">
+        <MappingFragment StoreEntitySet="tbl_PAYMENT_MODE">
+          <ScalarProperty Name="PAYMENT_MODE_ID" ColumnName="PAYMENT_MODE_ID" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+          <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+          <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+          <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+          <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_PERMISSION">
+      <EntityTypeMapping TypeName="Stop2ShopModel.tbl_PERMISSION">
+        <MappingFragment StoreEntitySet="tbl_PERMISSION">
+          <ScalarProperty Name="OWNER_ID" ColumnName="OWNER_ID" />
+          <ScalarProperty Name="PERMISSION_ID" ColumnName="PERMISSION_ID" />
+          <ScalarProperty Name="PROCESS" ColumnName="PROCESS" />
+          <ScalarProperty Name="ROLE_ID" ColumnName="ROLE_ID" />
+          <ScalarProperty Name="PERMISSION" ColumnName="PERMISSION" />
+          <ScalarProperty Name="ROWGUID" ColumnName="ROWGUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_PICK_SLIP">
+      <EntityTypeMapping TypeName="Stop2ShopModel.tbl_PICK_SLIP">
+        <MappingFragment StoreEntitySet="tbl_PICK_SLIP">
+          <ScalarProperty Name="OWNER_ID" ColumnName="OWNER_ID" />
+          <ScalarProperty Name="PICK_SLIP_ID" ColumnName="PICK_SLIP_ID" />
+          <ScalarProperty Name="PICK_SLIP_NO" ColumnName="PICK_SLIP_NO" />
+          <ScalarProperty Name="PICK_SLIP_DATE" ColumnName="PICK_SLIP_DATE" />
+          <ScalarProperty Name="PS_CONFIRMED_DATE" ColumnName="PS_CONFIRMED_DATE" />
+          <ScalarProperty Name="SLIP_VALUE" ColumnName="SLIP_VALUE" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+          <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+          <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+          <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+          <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+          <ScalarProperty Name="ROWGUID" ColumnName="ROWGUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_PICK_SLIP_PART">
+      <EntityTypeMapping TypeName="Stop2ShopModel.tbl_PICK_SLIP_PART">
+        <MappingFragment StoreEntitySet="tbl_PICK_SLIP_PART">
+          <ScalarProperty Name="OWNER_ID" ColumnName="OWNER_ID" />
+          <ScalarProperty Name="PICK_SLIP_PART_ID" ColumnName="PICK_SLIP_PART_ID" />
+          <ScalarProperty Name="PICK_SLIP_ID" ColumnName="PICK_SLIP_ID" />
+          <ScalarProperty Name="SALE_ORDER_ID" ColumnName="SALE_ORDER_ID" />
+          <ScalarProperty Name="REF_CUST_PO_PART_ID" ColumnName="REF_CUST_PO_PART_ID" />
+          <ScalarProperty Name="SPARE_PART_ID" ColumnName="SPARE_PART_ID" />
+          <ScalarProperty Name="UNIT_RATE" ColumnName="UNIT_RATE" />
+          <ScalarProperty Name="QUANTITY" ColumnName="QUANTITY" />
+          <ScalarProperty Name="MRP" ColumnName="MRP" />
+          <ScalarProperty Name="ROWGUID" ColumnName="ROWGUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_PICK_SLIP_PART_DET">
+      <EntityTypeMapping TypeName="Stop2ShopModel.tbl_PICK_SLIP_PART_DET">
+        <MappingFragment StoreEntitySet="tbl_PICK_SLIP_PART_DET">
+          <ScalarProperty Name="OWNER_ID" ColumnName="OWNER_ID" />
+          <ScalarProperty Name="PICK_SLIP_PART_DET_ID" ColumnName="PICK_SLIP_PART_DET_ID" />
+          <ScalarProperty Name="PICK_SLIP_PART_ID" ColumnName="PICK_SLIP_PART_ID" />
+          <ScalarProperty Name="QUANTITY" ColumnName="QUANTITY" />
+          <ScalarProperty Name="PART_COST" ColumnName="PART_COST" />
+          <ScalarProperty Name="TAXABLE" ColumnName="TAXABLE" />
+          <ScalarProperty Name="PART_RK_BN_ID" ColumnName="PART_RK_BN_ID" />
+          <ScalarProperty Name="ROWGUID" ColumnName="ROWGUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_PICK_SLIP_SO">
+      <EntityTypeMapping TypeName="Stop2ShopModel.tbl_PICK_SLIP_SO">
+        <MappingFragment StoreEntitySet="tbl_PICK_SLIP_SO">
+          <ScalarProperty Name="OWNER_ID" ColumnName="OWNER_ID" />
+          <ScalarProperty Name="PICK_SLIP_ID" ColumnName="PICK_SLIP_ID" />
+          <ScalarProperty Name="SALE_ORDER_ID" ColumnName="SALE_ORDER_ID" />
+          <ScalarProperty Name="ROWGUID" ColumnName="ROWGUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_PROCESS">
+      <EntityTypeMapping TypeName="Stop2ShopModel.tbl_PROCESS">
+        <MappingFragment StoreEntitySet="tbl_PROCESS">
+          <ScalarProperty Name="PROCESS" ColumnName="PROCESS" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="GROUP_ID" ColumnName="GROUP_ID" />
+          <ScalarProperty Name="PROCESS_TYPE" ColumnName="PROCESS_TYPE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_RACK">
+      <EntityTypeMapping TypeName="Stop2ShopModel.tbl_RACK">
+        <MappingFragment StoreEntitySet="tbl_RACK">
+          <ScalarProperty Name="OWNER_ID" ColumnName="OWNER_ID" />
+          <ScalarProperty Name="RACK_ID" ColumnName="RACK_ID" />
+          <ScalarProperty Name="LOCATION_ID" ColumnName="LOCATION_ID" />
+          <ScalarProperty Name="RACK_DESC" ColumnName="RACK_DESC" />
+          <ScalarProperty Name="DEF_RACK" ColumnName="DEF_RACK" />
+          <ScalarProperty Name="ROWGUID" ColumnName="ROWGUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ROLE">
+      <EntityTypeMapping TypeName="Stop2ShopModel.tbl_ROLE">
+        <MappingFragment StoreEntitySet="tbl_ROLE">
+          <ScalarProperty Name="ROLE_ID" ColumnName="ROLE_ID" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="ROLE_NAME" ColumnName="ROLE_NAME" />
+          <ScalarProperty Name="ROWGUID" ColumnName="ROWGUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_SO_CLOSE_REASON">
+      <EntityTypeMapping TypeName="Stop2ShopModel.tbl_SO_CLOSE_REASON">
+        <MappingFragment StoreEntitySet="tbl_SO_CLOSE_REASON">
+          <ScalarProperty Name="REASON_ID" ColumnName="REASON_ID" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+          <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+          <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+          <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+          <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+          <ScalarProperty Name="ROWGUID" ColumnName="ROWGUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_SPARE_COST">
+      <EntityTypeMapping TypeName="Stop2ShopModel.tbl_SPARE_COST">
+        <MappingFragment StoreEntitySet="tbl_SPARE_COST">
+          <ScalarProperty Name="OWNER_ID" ColumnName="OWNER_ID" />
+          <ScalarProperty Name="SPARE_COST_ID" ColumnName="SPARE_COST_ID" />
+          <ScalarProperty Name="SPARE_PART_ID" ColumnName="SPARE_PART_ID" />
+          <ScalarProperty Name="VENDOR_ID" ColumnName="VENDOR_ID" />
+          <ScalarProperty Name="INVOICE_PRICE" ColumnName="INVOICE_PRICE" />
+          <ScalarProperty Name="VALID_FROM" ColumnName="VALID_FROM" />
+          <ScalarProperty Name="DLR_PAID_TAX" ColumnName="DLR_PAID_TAX" />
+          <ScalarProperty Name="TVS_PAID_TAX" ColumnName="TVS_PAID_TAX" />
+          <ScalarProperty Name="PART_COST" ColumnName="PART_COST" />
+          <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+          <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+          <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+          <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+          <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+          <ScalarProperty Name="ROWGUID" ColumnName="ROWGUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_SPARE_INV_PART_DET">
+      <EntityTypeMapping TypeName="Stop2ShopModel.tbl_SPARE_INV_PART_DET">
+        <MappingFragment StoreEntitySet="tbl_SPARE_INV_PART_DET">
+          <ScalarProperty Name="OWNER_ID" ColumnName="OWNER_ID" />
+          <ScalarProperty Name="SPR_INV_PART_DET_ID" ColumnName="SPR_INV_PART_DET_ID" />
+          <ScalarProperty Name="SPARE_INV_PART_ID" ColumnName="SPARE_INV_PART_ID" />
+          <ScalarProperty Name="QUANTITY" ColumnName="QUANTITY" />
+          <ScalarProperty Name="MRP" ColumnName="MRP" />
+          <ScalarProperty Name="PART_RK_BN_ID" ColumnName="PART_RK_BN_ID" />
+          <ScalarProperty Name="ROWGUID" ColumnName="ROWGUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_SPARE_INVOICE">
+      <EntityTypeMapping TypeName="Stop2ShopModel.tbl_SPARE_INVOICE">
+        <MappingFragment StoreEntitySet="tbl_SPARE_INVOICE">
+          <ScalarProperty Name="OWNER_ID" ColumnName="OWNER_ID" />
+          <ScalarProperty Name="SPARE_INV_ID" ColumnName="SPARE_INV_ID" />
+          <ScalarProperty Name="SPARE_INV_NO" ColumnName="SPARE_INV_NO" />
+          <ScalarProperty Name="INVOICE_DATE" ColumnName="INVOICE_DATE" />
+          <ScalarProperty Name="BILL_TYPE" ColumnName="BILL_TYPE" />
+          <ScalarProperty Name="INVOICE_TYPE" ColumnName="INVOICE_TYPE" />
+          <ScalarProperty Name="ORDER_TYPE" ColumnName="ORDER_TYPE" />
+          <ScalarProperty Name="LOCATION_ID" ColumnName="LOCATION_ID" />
+          <ScalarProperty Name="CUSTOMER_ID" ColumnName="CUSTOMER_ID" />
+          <ScalarProperty Name="PICK_SLIP_ID" ColumnName="PICK_SLIP_ID" />
+          <ScalarProperty Name="PAYMENT_MODE_ID" ColumnName="PAYMENT_MODE_ID" />
+          <ScalarProperty Name="INVOICE_VALUE" ColumnName="INVOICE_VALUE" />
+          <ScalarProperty Name="DISCOUNT" ColumnName="DISCOUNT" />
+          <ScalarProperty Name="ROUND_OFF" ColumnName="ROUND_OFF" />
+          <ScalarProperty Name="TOT_AMT_RECV" ColumnName="TOT_AMT_RECV" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+          <ScalarProperty Name="CUSTOMER_PO_NO" ColumnName="CUSTOMER_PO_NO" />
+          <ScalarProperty Name="CUSTOMER_PO_DATE" ColumnName="CUSTOMER_PO_DATE" />
+          <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+          <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+          <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+          <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+          <ScalarProperty Name="ROWGUID" ColumnName="ROWGUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_SPARE_INVOICE_PART">
+      <EntityTypeMapping TypeName="Stop2ShopModel.tbl_SPARE_INVOICE_PART">
+        <MappingFragment StoreEntitySet="tbl_SPARE_INVOICE_PART">
+          <ScalarProperty Name="OWNER_ID" ColumnName="OWNER_ID" />
+          <ScalarProperty Name="SPARE_INV_PART_ID" ColumnName="SPARE_INV_PART_ID" />
+          <ScalarProperty Name="SPARE_PART_ID" ColumnName="SPARE_PART_ID" />
+          <ScalarProperty Name="SPARE_INV_ID" ColumnName="SPARE_INV_ID" />
+          <ScalarProperty Name="SALE_ORDER_ID" ColumnName="SALE_ORDER_ID" />
+          <ScalarProperty Name="INVOICE_QTY" ColumnName="INVOICE_QTY" />
+          <ScalarProperty Name="UNIT_PRICE" ColumnName="UNIT_PRICE" />
+          <ScalarProperty Name="MANUAL_DISC" ColumnName="MANUAL_DISC" />
+          <ScalarProperty Name="TAX" ColumnName="TAX" />
+          <ScalarProperty Name="PART_COST" ColumnName="PART_COST" />
+          <ScalarProperty Name="MANUAL_DISCOUNT_PERCENT" ColumnName="MANUAL_DISCOUNT_PERCENT" />
+          <ScalarProperty Name="ROWGUID" ColumnName="ROWGUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_SPARE_PART">
+      <EntityTypeMapping TypeName="Stop2ShopModel.tbl_SPARE_PART">
+        <MappingFragment StoreEntitySet="tbl_SPARE_PART">
+          <ScalarProperty Name="OWNER_ID" ColumnName="OWNER_ID" />
+          <ScalarProperty Name="SPARE_PART_ID" ColumnName="SPARE_PART_ID" />
+          <ScalarProperty Name="PART_NO" ColumnName="PART_NO" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="BLOCK_ORD" ColumnName="BLOCK_ORD" />
+          <ScalarProperty Name="ITEM_TYPE_ID" ColumnName="ITEM_TYPE_ID" />
+          <ScalarProperty Name="BLOCK_FOR_ISSUE" ColumnName="BLOCK_FOR_ISSUE" />
+          <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+          <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+          <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+          <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+          <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+          <ScalarProperty Name="ROWGUID" ColumnName="ROWGUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_SPARE_PART_LOC">
+      <EntityTypeMapping TypeName="Stop2ShopModel.tbl_SPARE_PART_LOC">
+        <MappingFragment StoreEntitySet="tbl_SPARE_PART_LOC">
+          <ScalarProperty Name="OWNER_ID" ColumnName="OWNER_ID" />
+          <ScalarProperty Name="PART_LOC_ID" ColumnName="PART_LOC_ID" />
+          <ScalarProperty Name="SPARE_PART_ID" ColumnName="SPARE_PART_ID" />
+          <ScalarProperty Name="LOCATION_ID" ColumnName="LOCATION_ID" />
+          <ScalarProperty Name="SAFETY_STOCK" ColumnName="SAFETY_STOCK" />
+          <ScalarProperty Name="RACK_ID" ColumnName="RACK_ID" />
+          <ScalarProperty Name="BIN_ID" ColumnName="BIN_ID" />
+          <ScalarProperty Name="ROWGUID" ColumnName="ROWGUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_SPARE_PO">
+      <EntityTypeMapping TypeName="Stop2ShopModel.tbl_SPARE_PO">
+        <MappingFragment StoreEntitySet="tbl_SPARE_PO">
+          <ScalarProperty Name="OWNER_ID" ColumnName="OWNER_ID" />
+          <ScalarProperty Name="SPARE_PO_ID" ColumnName="SPARE_PO_ID" />
+          <ScalarProperty Name="SPARE_PO_NO" ColumnName="SPARE_PO_NO" />
+          <ScalarProperty Name="PO_DATE" ColumnName="PO_DATE" />
+          <ScalarProperty Name="VENDOR_ID" ColumnName="VENDOR_ID" />
+          <ScalarProperty Name="ORDER_TYPE" ColumnName="ORDER_TYPE" />
+          <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="SAP_SALE_ORDER_NO" ColumnName="SAP_SALE_ORDER_NO" />
+          <ScalarProperty Name="SAP_SALE_ORD_DT" ColumnName="SAP_SALE_ORD_DT" />
+          <ScalarProperty Name="TOT_VAL" ColumnName="TOT_VAL" />
+          <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+          <ScalarProperty Name="PO_CONFIRMED_DATE" ColumnName="PO_CONFIRMED_DATE" />
+          <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+          <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+          <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+          <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+          <ScalarProperty Name="ROWGUID" ColumnName="ROWGUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_SPARE_PO_DET">
+      <EntityTypeMapping TypeName="Stop2ShopModel.tbl_SPARE_PO_DET">
+        <MappingFragment StoreEntitySet="tbl_SPARE_PO_DET">
+          <ScalarProperty Name="OWNER_ID" ColumnName="OWNER_ID" />
+          <ScalarProperty Name="SPARE_PO_DET_ID" ColumnName="SPARE_PO_DET_ID" />
+          <ScalarProperty Name="SPARE_PO_ID" ColumnName="SPARE_PO_ID" />
+          <ScalarProperty Name="SPARE_PART_ID" ColumnName="SPARE_PART_ID" />
+          <ScalarProperty Name="ORDER_QTY" ColumnName="ORDER_QTY" />
+          <ScalarProperty Name="PENDING_QTY" ColumnName="PENDING_QTY" />
+          <ScalarProperty Name="IN_TRANS_QTY" ColumnName="IN_TRANS_QTY" />
+          <ScalarProperty Name="REJ_QTY" ColumnName="REJ_QTY" />
+          <ScalarProperty Name="RECV_QTY" ColumnName="RECV_QTY" />
+          <ScalarProperty Name="RATE" ColumnName="RATE" />
+          <ScalarProperty Name="TAX" ColumnName="TAX" />
+          <ScalarProperty Name="SEQ_NO" ColumnName="SEQ_NO" />
+          <ScalarProperty Name="ROWGUID" ColumnName="ROWGUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_SPARE_SALE_ORDER">
+      <EntityTypeMapping TypeName="Stop2ShopModel.tbl_SPARE_SALE_ORDER">
+        <MappingFragment StoreEntitySet="tbl_SPARE_SALE_ORDER">
+          <ScalarProperty Name="OWNER_ID" ColumnName="OWNER_ID" />
+          <ScalarProperty Name="SALE_ORDER_ID" ColumnName="SALE_ORDER_ID" />
+          <ScalarProperty Name="SALE_ORDER_NO" ColumnName="SALE_ORDER_NO" />
+          <ScalarProperty Name="ORDER_DATE" ColumnName="ORDER_DATE" />
+          <ScalarProperty Name="LOCATION_ID" ColumnName="LOCATION_ID" />
+          <ScalarProperty Name="CUSTOMER_ID" ColumnName="CUSTOMER_ID" />
+          <ScalarProperty Name="PAYMENT_MODE_ID" ColumnName="PAYMENT_MODE_ID" />
+          <ScalarProperty Name="REF_CUST_PO" ColumnName="REF_CUST_PO" />
+          <ScalarProperty Name="REF_CUST_PO_DATE" ColumnName="REF_CUST_PO_DATE" />
+          <ScalarProperty Name="BILL_TYPE" ColumnName="BILL_TYPE" />
+          <ScalarProperty Name="ORDER_VALUE" ColumnName="ORDER_VALUE" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="PICKSLIP_EXISTS" ColumnName="PICKSLIP_EXISTS" />
+          <ScalarProperty Name="REASON_ID" ColumnName="REASON_ID" />
+          <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+          <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+          <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+          <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+          <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+          <ScalarProperty Name="ROWGUID" ColumnName="ROWGUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_SPARE_SO_PART">
+      <EntityTypeMapping TypeName="Stop2ShopModel.tbl_SPARE_SO_PART">
+        <MappingFragment StoreEntitySet="tbl_SPARE_SO_PART">
+          <ScalarProperty Name="OWNER_ID" ColumnName="OWNER_ID" />
+          <ScalarProperty Name="SPARE_SO_PART_ID" ColumnName="SPARE_SO_PART_ID" />
+          <ScalarProperty Name="SALE_ORDER_ID" ColumnName="SALE_ORDER_ID" />
+          <ScalarProperty Name="SPARE_PART_ID" ColumnName="SPARE_PART_ID" />
+          <ScalarProperty Name="QUANTITY" ColumnName="QUANTITY" />
+          <ScalarProperty Name="RATE" ColumnName="RATE" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="REASON_ID" ColumnName="REASON_ID" />
+          <ScalarProperty Name="PICKSLIP_EXISTS" ColumnName="PICKSLIP_EXISTS" />
+          <ScalarProperty Name="MRP" ColumnName="MRP" />
+          <ScalarProperty Name="SPARE_PO_PART_ID" ColumnName="SPARE_PO_PART_ID" />
+          <ScalarProperty Name="ROWGUID" ColumnName="ROWGUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_STATE">
+      <EntityTypeMapping TypeName="Stop2ShopModel.tbl_STATE">
+        <MappingFragment StoreEntitySet="tbl_STATE">
+          <ScalarProperty Name="STATE_ID" ColumnName="STATE_ID" />
+          <ScalarProperty Name="STATE_NAME" ColumnName="STATE_NAME" />
+          <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+          <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+          <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+          <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+          <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+          <ScalarProperty Name="ROWGUID" ColumnName="ROWGUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_STORAGE_LOC">
+      <EntityTypeMapping TypeName="Stop2ShopModel.tbl_STORAGE_LOC">
+        <MappingFragment StoreEntitySet="tbl_STORAGE_LOC">
+          <ScalarProperty Name="OWNER_ID" ColumnName="OWNER_ID" />
+          <ScalarProperty Name="LOCATION_ID" ColumnName="LOCATION_ID" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+          <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+          <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+          <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+          <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+          <ScalarProperty Name="DEF_SALE_ORD_LOC" ColumnName="DEF_SALE_ORD_LOC" />
+          <ScalarProperty Name="ROWGUID" ColumnName="ROWGUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_USER">
+      <EntityTypeMapping TypeName="Stop2ShopModel.tbl_USER">
+        <MappingFragment StoreEntitySet="tbl_USER">
+          <ScalarProperty Name="USER_PROFILE_ID" ColumnName="USER_PROFILE_ID" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="ROWGUID" ColumnName="ROWGUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_USER_ROLE">
+      <EntityTypeMapping TypeName="Stop2ShopModel.tbl_USER_ROLE">
+        <MappingFragment StoreEntitySet="tbl_USER_ROLE">
+          <ScalarProperty Name="ROLE_ID" ColumnName="ROLE_ID" />
+          <ScalarProperty Name="USER_PROFILE_ID" ColumnName="USER_PROFILE_ID" />
+          <ScalarProperty Name="ROWGUID" ColumnName="ROWGUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_VENDOR">
+      <EntityTypeMapping TypeName="Stop2ShopModel.tbl_VENDOR">
+        <MappingFragment StoreEntitySet="tbl_VENDOR">
+          <ScalarProperty Name="VENDOR_ID" ColumnName="VENDOR_ID" />
+          <ScalarProperty Name="VENDOR_NAME" ColumnName="VENDOR_NAME" />
+          <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+          <ScalarProperty Name="CRED_LIM" ColumnName="CRED_LIM" />
+          <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+          <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+          <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+          <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+          <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+          <ScalarProperty Name="STATE_ID" ColumnName="STATE_ID" />
+          <ScalarProperty Name="ROWGUID" ColumnName="ROWGUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

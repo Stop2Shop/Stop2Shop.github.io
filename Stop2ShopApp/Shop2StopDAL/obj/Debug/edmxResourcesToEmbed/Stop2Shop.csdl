@@ -1,0 +1,1380 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Stop2ShopModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tbl_AREA">
+    <Key>
+      <PropertyRef Name="AREA_ID" />
+    </Key>
+    <Property Name="AREA_ID" Type="Int16" Nullable="false" />
+    <Property Name="AREA_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CREATED_BY" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CREATED_ON" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MODIFIED_BY" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="MODIFIED_ON" Type="DateTime" Precision="3" />
+    <Property Name="ACTIVE" Type="Boolean" Nullable="false" />
+    <Property Name="PIN_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CITY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DISTRICT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="STATE_ID" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="ROWGUID" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="tbl_CUSTOMER_ADDRESS" Relationship="Self.fk_area_cust_add" FromRole="tbl_AREA" ToRole="tbl_CUSTOMER_ADDRESS" />
+  </EntityType>
+  <EntityType Name="tbl_BIN">
+    <Key>
+      <PropertyRef Name="OWNER_ID" />
+      <PropertyRef Name="BIN_ID" />
+    </Key>
+    <Property Name="OWNER_ID" Type="Int32" Nullable="false" />
+    <Property Name="BIN_ID" Type="Int16" Nullable="false" />
+    <Property Name="RACK_ID" Type="Int16" Nullable="false" />
+    <Property Name="BIN_DESC" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="DEF_BIN" Type="Boolean" Nullable="false" />
+    <Property Name="ROWGUID" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="tbl_PART_MFR_LOC_RACK_BIN" Relationship="Self.fk_bin_part_mfrlcrkbn" FromRole="tbl_BIN" ToRole="tbl_PART_MFR_LOC_RACK_BIN" />
+    <NavigationProperty Name="tbl_SPARE_PART_LOC" Relationship="Self.fk_bin_spr_part_loc" FromRole="tbl_BIN" ToRole="tbl_SPARE_PART_LOC" />
+    <NavigationProperty Name="tbl_RACK" Relationship="Self.fk_rack_bin" FromRole="tbl_BIN" ToRole="tbl_RACK" />
+  </EntityType>
+  <EntityType Name="tbl_CUSTOMER">
+    <Key>
+      <PropertyRef Name="CUSTOMER_ID" />
+    </Key>
+    <Property Name="CUSTOMER_ID" Type="Int32" Nullable="false" />
+    <Property Name="CUST_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DATE_OF_BIRTH" Type="DateTime" Precision="3" />
+    <Property Name="GENDER" Type="Boolean" Nullable="false" />
+    <Property Name="CUST_TY_ID" Type="Byte" />
+    <Property Name="EMAIL_ADDRESS" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="CREDIT_LIM" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="CONTACT_NO_1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CONTACT_NO_2" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CREATED_BY" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CREATED_ON" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MODIFIED_BY" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="MODIFIED_ON" Type="DateTime" Precision="3" />
+    <Property Name="ACTIVE" Type="Boolean" Nullable="false" />
+    <Property Name="ROWGUID" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="tbl_CUSTOMER_ADDRESS" Relationship="Self.fk_cust_cust_add" FromRole="tbl_CUSTOMER" ToRole="tbl_CUSTOMER_ADDRESS" />
+    <NavigationProperty Name="tbl_SPARE_INVOICE" Relationship="Self.fk_cust_spr_inv_cust" FromRole="tbl_CUSTOMER" ToRole="tbl_SPARE_INVOICE" />
+    <NavigationProperty Name="tbl_SPARE_SALE_ORDER" Relationship="Self.fk_cust_spr_so_cust" FromRole="tbl_CUSTOMER" ToRole="tbl_SPARE_SALE_ORDER" />
+    <NavigationProperty Name="tbl_CUSTOMER_TYPE" Relationship="Self.fk_cust_type_cust" FromRole="tbl_CUSTOMER" ToRole="tbl_CUSTOMER_TYPE" />
+  </EntityType>
+  <EntityType Name="tbl_CUSTOMER_ADDRESS">
+    <Key>
+      <PropertyRef Name="CUSTOMER_ID" />
+      <PropertyRef Name="ADDRESS_TYPE" />
+    </Key>
+    <Property Name="CUSTOMER_ID" Type="Int32" Nullable="false" />
+    <Property Name="ADDRESS_TYPE" Type="Byte" Nullable="false" />
+    <Property Name="ADDRESS_LINE_1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ADDRESS_LINE_2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ADDRESS_LINE_3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CITY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AREA_ID" Type="Int16" />
+    <Property Name="LANDMARK" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="STATE_ID" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="PIN_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="SAME_AS_COMM" Type="Boolean" Nullable="false" />
+    <Property Name="ROWGUID" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="tbl_AREA" Relationship="Self.fk_area_cust_add" FromRole="tbl_CUSTOMER_ADDRESS" ToRole="tbl_AREA" />
+    <NavigationProperty Name="tbl_CUSTOMER" Relationship="Self.fk_cust_cust_add" FromRole="tbl_CUSTOMER_ADDRESS" ToRole="tbl_CUSTOMER" />
+    <NavigationProperty Name="tbl_STATE" Relationship="Self.fk_state_cust_add" FromRole="tbl_CUSTOMER_ADDRESS" ToRole="tbl_STATE" />
+  </EntityType>
+  <EntityType Name="tbl_CUSTOMER_TYPE">
+    <Key>
+      <PropertyRef Name="CUST_TY_ID" />
+    </Key>
+    <Property Name="CUST_TY_ID" Type="Byte" Nullable="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ACTIVE" Type="Boolean" Nullable="false" />
+    <Property Name="ROWGUID" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="tbl_CUSTOMER" Relationship="Self.fk_cust_type_cust" FromRole="tbl_CUSTOMER_TYPE" ToRole="tbl_CUSTOMER" />
+  </EntityType>
+  <EntityType Name="tbl_GROUP">
+    <Key>
+      <PropertyRef Name="GROUP_ID" />
+    </Key>
+    <Property Name="GROUP_ID" Type="Byte" Nullable="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="GROUP_NAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbl_PROCESS" Relationship="Self.fk_grp_proc_grp_id" FromRole="tbl_GROUP" ToRole="tbl_PROCESS" />
+  </EntityType>
+  <EntityType Name="tbl_ID_TABLE">
+    <Key>
+      <PropertyRef Name="TABLE_ID" />
+    </Key>
+    <Property Name="TABLE_ID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="END_RANGE" Type="Int32" />
+    <Property Name="START_RANGE" Type="Int32" />
+    <Property Name="TABLE_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="CURRENT_ID" Type="Int32" />
+    <Property Name="ROWGUID" Type="Guid" Nullable="false" />
+    <Property Name="OWNER_ID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_ITEM_TYPE">
+    <Key>
+      <PropertyRef Name="ITEM_TYPE_ID" />
+    </Key>
+    <Property Name="ITEM_TYPE_ID" Type="Byte" Nullable="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="ITEM_CATEGORY" Type="Byte" />
+    <Property Name="ACTIVE" Type="Boolean" Nullable="false" />
+    <Property Name="ROWGUID" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="tbl_SPARE_PART" Relationship="Self.fk_item_ty_spr_part" FromRole="tbl_ITEM_TYPE" ToRole="tbl_SPARE_PART" />
+  </EntityType>
+  <EntityType Name="tbl_MENU">
+    <Key>
+      <PropertyRef Name="MENU_ID" />
+    </Key>
+    <Property Name="MENU_ID" Type="Int16" Nullable="false" />
+    <Property Name="FORM_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PARENT_TITLE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SHORT_KEY" Type="Int16" />
+    <Property Name="SHORT_KEY_DESC" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="MENU_LEVEL" Type="Byte" />
+    <Property Name="TITLE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MENU_SEQ" Type="Byte" />
+    <Property Name="OPERATION" Type="Byte" />
+    <Property Name="ASSEMBLY_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PROCESS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbl_PROCESS" Relationship="Self.fk_process_menu" FromRole="tbl_MENU" ToRole="tbl_PROCESS" />
+  </EntityType>
+  <EntityType Name="tbl_PART_MFR_LOC_RACK_BIN">
+    <Key>
+      <PropertyRef Name="OWNER_ID" />
+      <PropertyRef Name="PART_RK_BN_ID" />
+    </Key>
+    <Property Name="OWNER_ID" Type="Int32" Nullable="false" />
+    <Property Name="PART_RK_BN_ID" Type="Int32" Nullable="false" />
+    <Property Name="SPARE_PART_ID" Type="Int32" Nullable="false" />
+    <Property Name="LOCATION_ID" Type="Int32" Nullable="false" />
+    <Property Name="RACK_ID" Type="Int16" Nullable="false" />
+    <Property Name="BIN_ID" Type="Int16" Nullable="false" />
+    <Property Name="FREE_QTY" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="BLOCK_QTY" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="PART_COST" Type="Decimal" Precision="12" Scale="2" Nullable="false" />
+    <Property Name="MRP" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="TAX" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="TAXABLE" Type="Boolean" Nullable="false" />
+    <Property Name="CREATED_BY" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CREATED_ON" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MODIFIED_BY" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="MODIFIED_ON" Type="DateTime" Precision="3" />
+    <Property Name="ACTIVE" Type="Boolean" Nullable="false" />
+    <Property Name="STOCK_RECEIVED_DATE" Type="DateTime" Precision="3" />
+    <Property Name="ROWGUID" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="tbl_BIN" Relationship="Self.fk_bin_part_mfrlcrkbn" FromRole="tbl_PART_MFR_LOC_RACK_BIN" ToRole="tbl_BIN" />
+    <NavigationProperty Name="tbl_STORAGE_LOC" Relationship="Self.fk_loc_part_mfrlocrkbn" FromRole="tbl_PART_MFR_LOC_RACK_BIN" ToRole="tbl_STORAGE_LOC" />
+    <NavigationProperty Name="tbl_RACK" Relationship="Self.fk_rack_part_mfrlcrkbn" FromRole="tbl_PART_MFR_LOC_RACK_BIN" ToRole="tbl_RACK" />
+  </EntityType>
+  <EntityType Name="tbl_PAYMENT_MODE">
+    <Key>
+      <PropertyRef Name="PAYMENT_MODE_ID" />
+    </Key>
+    <Property Name="PAYMENT_MODE_ID" Type="Int16" Nullable="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CREATED_BY" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CREATED_ON" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MODIFIED_BY" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="MODIFIED_ON" Type="DateTime" Precision="3" />
+    <Property Name="ACTIVE" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="tbl_SPARE_SALE_ORDER" Relationship="Self.fk_pay_mod_spr_so" FromRole="tbl_PAYMENT_MODE" ToRole="tbl_SPARE_SALE_ORDER" />
+    <NavigationProperty Name="tbl_SPARE_INVOICE" Relationship="Self.fk_pay_mode_spr_inv" FromRole="tbl_PAYMENT_MODE" ToRole="tbl_SPARE_INVOICE" />
+  </EntityType>
+  <EntityType Name="tbl_PERMISSION">
+    <Key>
+      <PropertyRef Name="OWNER_ID" />
+      <PropertyRef Name="PERMISSION_ID" />
+    </Key>
+    <Property Name="OWNER_ID" Type="Int32" Nullable="false" />
+    <Property Name="PERMISSION_ID" Type="Int32" Nullable="false" />
+    <Property Name="PROCESS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ROLE_ID" Type="Int16" />
+    <Property Name="PERMISSION" Type="Byte" />
+    <Property Name="ROWGUID" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="tbl_PROCESS" Relationship="Self.fk_proc_perm_process" FromRole="tbl_PERMISSION" ToRole="tbl_PROCESS" />
+    <NavigationProperty Name="tbl_ROLE" Relationship="Self.fk_role_perm_role_id" FromRole="tbl_PERMISSION" ToRole="tbl_ROLE" />
+  </EntityType>
+  <EntityType Name="tbl_PICK_SLIP">
+    <Key>
+      <PropertyRef Name="OWNER_ID" />
+      <PropertyRef Name="PICK_SLIP_ID" />
+    </Key>
+    <Property Name="OWNER_ID" Type="Int32" Nullable="false" />
+    <Property Name="PICK_SLIP_ID" Type="Int32" Nullable="false" />
+    <Property Name="PICK_SLIP_NO" Type="Int32" />
+    <Property Name="PICK_SLIP_DATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PS_CONFIRMED_DATE" Type="DateTime" Precision="3" />
+    <Property Name="SLIP_VALUE" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="STATUS" Type="Boolean" Nullable="false" />
+    <Property Name="CREATED_BY" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CREATED_ON" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MODIFIED_BY" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="MODIFIED_ON" Type="DateTime" Precision="3" />
+    <Property Name="ACTIVE" Type="Boolean" Nullable="false" />
+    <Property Name="ROWGUID" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="tbl_PICK_SLIP_PART" Relationship="Self.fk_pick_slip_pick_slip_part" FromRole="tbl_PICK_SLIP" ToRole="tbl_PICK_SLIP_PART" />
+    <NavigationProperty Name="tbl_PICK_SLIP_SO" Relationship="Self.fk_pkslip_pkslip_so" FromRole="tbl_PICK_SLIP" ToRole="tbl_PICK_SLIP_SO" />
+    <NavigationProperty Name="tbl_SPARE_INVOICE" Relationship="Self.fk_pkslip_spr_inv" FromRole="tbl_PICK_SLIP" ToRole="tbl_SPARE_INVOICE" />
+  </EntityType>
+  <EntityType Name="tbl_PICK_SLIP_PART">
+    <Key>
+      <PropertyRef Name="OWNER_ID" />
+      <PropertyRef Name="PICK_SLIP_PART_ID" />
+    </Key>
+    <Property Name="OWNER_ID" Type="Int32" Nullable="false" />
+    <Property Name="PICK_SLIP_PART_ID" Type="Int32" Nullable="false" />
+    <Property Name="PICK_SLIP_ID" Type="Int32" Nullable="false" />
+    <Property Name="SALE_ORDER_ID" Type="Int32" />
+    <Property Name="REF_CUST_PO_PART_ID" Type="Int32" />
+    <Property Name="SPARE_PART_ID" Type="Int32" />
+    <Property Name="UNIT_RATE" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="QUANTITY" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="MRP" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="ROWGUID" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="tbl_PICK_SLIP" Relationship="Self.fk_pick_slip_pick_slip_part" FromRole="tbl_PICK_SLIP_PART" ToRole="tbl_PICK_SLIP" />
+    <NavigationProperty Name="tbl_PICK_SLIP_PART_DET" Relationship="Self.fk_pkslp_part_pkslip_part_det" FromRole="tbl_PICK_SLIP_PART" ToRole="tbl_PICK_SLIP_PART_DET" />
+    <NavigationProperty Name="tbl_SPARE_SALE_ORDER" Relationship="Self.fk_spr_so_pick_slip_part" FromRole="tbl_PICK_SLIP_PART" ToRole="tbl_SPARE_SALE_ORDER" />
+  </EntityType>
+  <EntityType Name="tbl_PICK_SLIP_PART_DET">
+    <Key>
+      <PropertyRef Name="OWNER_ID" />
+      <PropertyRef Name="PICK_SLIP_PART_DET_ID" />
+    </Key>
+    <Property Name="OWNER_ID" Type="Int32" Nullable="false" />
+    <Property Name="PICK_SLIP_PART_DET_ID" Type="Int32" Nullable="false" />
+    <Property Name="PICK_SLIP_PART_ID" Type="Int32" />
+    <Property Name="QUANTITY" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="PART_COST" Type="Decimal" Precision="12" Scale="2" Nullable="false" />
+    <Property Name="TAXABLE" Type="Boolean" Nullable="false" />
+    <Property Name="PART_RK_BN_ID" Type="Int32" />
+    <Property Name="ROWGUID" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="tbl_PICK_SLIP_PART" Relationship="Self.fk_pkslp_part_pkslip_part_det" FromRole="tbl_PICK_SLIP_PART_DET" ToRole="tbl_PICK_SLIP_PART" />
+  </EntityType>
+  <EntityType Name="tbl_PICK_SLIP_SO">
+    <Key>
+      <PropertyRef Name="OWNER_ID" />
+      <PropertyRef Name="PICK_SLIP_ID" />
+      <PropertyRef Name="SALE_ORDER_ID" />
+    </Key>
+    <Property Name="OWNER_ID" Type="Int32" Nullable="false" />
+    <Property Name="PICK_SLIP_ID" Type="Int32" Nullable="false" />
+    <Property Name="SALE_ORDER_ID" Type="Int32" Nullable="false" />
+    <Property Name="ROWGUID" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="tbl_PICK_SLIP" Relationship="Self.fk_pkslip_pkslip_so" FromRole="tbl_PICK_SLIP_SO" ToRole="tbl_PICK_SLIP" />
+    <NavigationProperty Name="tbl_SPARE_SALE_ORDER" Relationship="Self.fk_spr_so_pkslip_so" FromRole="tbl_PICK_SLIP_SO" ToRole="tbl_SPARE_SALE_ORDER" />
+  </EntityType>
+  <EntityType Name="tbl_PROCESS">
+    <Key>
+      <PropertyRef Name="PROCESS" />
+    </Key>
+    <Property Name="PROCESS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="GROUP_ID" Type="Byte" />
+    <Property Name="PROCESS_TYPE" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="tbl_GROUP" Relationship="Self.fk_grp_proc_grp_id" FromRole="tbl_PROCESS" ToRole="tbl_GROUP" />
+    <NavigationProperty Name="tbl_MENU" Relationship="Self.fk_process_menu" FromRole="tbl_PROCESS" ToRole="tbl_MENU" />
+    <NavigationProperty Name="tbl_PERMISSION" Relationship="Self.fk_proc_perm_process" FromRole="tbl_PROCESS" ToRole="tbl_PERMISSION" />
+  </EntityType>
+  <EntityType Name="tbl_RACK">
+    <Key>
+      <PropertyRef Name="OWNER_ID" />
+      <PropertyRef Name="RACK_ID" />
+    </Key>
+    <Property Name="OWNER_ID" Type="Int32" Nullable="false" />
+    <Property Name="RACK_ID" Type="Int16" Nullable="false" />
+    <Property Name="LOCATION_ID" Type="Int32" />
+    <Property Name="RACK_DESC" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="DEF_RACK" Type="Boolean" Nullable="false" />
+    <Property Name="ROWGUID" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="tbl_BIN" Relationship="Self.fk_rack_bin" FromRole="tbl_RACK" ToRole="tbl_BIN" />
+    <NavigationProperty Name="tbl_PART_MFR_LOC_RACK_BIN" Relationship="Self.fk_rack_part_mfrlcrkbn" FromRole="tbl_RACK" ToRole="tbl_PART_MFR_LOC_RACK_BIN" />
+    <NavigationProperty Name="tbl_SPARE_PART_LOC" Relationship="Self.fk_rack_spr_part_loc" FromRole="tbl_RACK" ToRole="tbl_SPARE_PART_LOC" />
+    <NavigationProperty Name="tbl_STORAGE_LOC" Relationship="Self.fk_stor_loc_rack_stor_loc_id" FromRole="tbl_RACK" ToRole="tbl_STORAGE_LOC" />
+  </EntityType>
+  <EntityType Name="tbl_ROLE">
+    <Key>
+      <PropertyRef Name="ROLE_ID" />
+    </Key>
+    <Property Name="ROLE_ID" Type="Int16" Nullable="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ROLE_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ROWGUID" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="tbl_PERMISSION" Relationship="Self.fk_role_perm_role_id" FromRole="tbl_ROLE" ToRole="tbl_PERMISSION" />
+    <NavigationProperty Name="tbl_USER_ROLE" Relationship="Self.fk_role_user_role_role_id" FromRole="tbl_ROLE" ToRole="tbl_USER_ROLE" />
+  </EntityType>
+  <EntityType Name="tbl_SO_CLOSE_REASON">
+    <Key>
+      <PropertyRef Name="REASON_ID" />
+    </Key>
+    <Property Name="REASON_ID" Type="Int16" Nullable="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CREATED_BY" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CREATED_ON" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MODIFIED_BY" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="MODIFIED_ON" Type="DateTime" Precision="3" />
+    <Property Name="ACTIVE" Type="Boolean" Nullable="false" />
+    <Property Name="ROWGUID" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="tbl_SPARE_SO_PART" Relationship="Self.fk_so_clos_rsn_sal_ord_part" FromRole="tbl_SO_CLOSE_REASON" ToRole="tbl_SPARE_SO_PART" />
+    <NavigationProperty Name="tbl_SPARE_SALE_ORDER" Relationship="Self.fk_so_clos_rsn_spr_sal_ord" FromRole="tbl_SO_CLOSE_REASON" ToRole="tbl_SPARE_SALE_ORDER" />
+  </EntityType>
+  <EntityType Name="tbl_SPARE_COST">
+    <Key>
+      <PropertyRef Name="OWNER_ID" />
+      <PropertyRef Name="SPARE_COST_ID" />
+    </Key>
+    <Property Name="OWNER_ID" Type="Int32" Nullable="false" />
+    <Property Name="SPARE_COST_ID" Type="Int32" Nullable="false" />
+    <Property Name="SPARE_PART_ID" Type="Int32" Nullable="false" />
+    <Property Name="VENDOR_ID" Type="Int16" />
+    <Property Name="INVOICE_PRICE" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="VALID_FROM" Type="DateTime" Precision="3" />
+    <Property Name="DLR_PAID_TAX" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="TVS_PAID_TAX" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="PART_COST" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="CREATED_BY" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CREATED_ON" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MODIFIED_BY" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="MODIFIED_ON" Type="DateTime" Precision="3" />
+    <Property Name="ACTIVE" Type="Boolean" Nullable="false" />
+    <Property Name="ROWGUID" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="tbl_SPARE_PART" Relationship="Self.fk_spr_part_spr_cost" FromRole="tbl_SPARE_COST" ToRole="tbl_SPARE_PART" />
+  </EntityType>
+  <EntityType Name="tbl_SPARE_INV_PART_DET">
+    <Key>
+      <PropertyRef Name="OWNER_ID" />
+      <PropertyRef Name="SPR_INV_PART_DET_ID" />
+    </Key>
+    <Property Name="OWNER_ID" Type="Int32" Nullable="false" />
+    <Property Name="SPR_INV_PART_DET_ID" Type="Int32" Nullable="false" />
+    <Property Name="SPARE_INV_PART_ID" Type="Int32" Nullable="false" />
+    <Property Name="QUANTITY" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="MRP" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="PART_RK_BN_ID" Type="Int32" />
+    <Property Name="ROWGUID" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="tbl_SPARE_INVOICE_PART" Relationship="Self.fk_spr_inv_part_spr_part_det" FromRole="tbl_SPARE_INV_PART_DET" ToRole="tbl_SPARE_INVOICE_PART" />
+  </EntityType>
+  <EntityType Name="tbl_SPARE_INVOICE">
+    <Key>
+      <PropertyRef Name="OWNER_ID" />
+      <PropertyRef Name="SPARE_INV_ID" />
+    </Key>
+    <Property Name="OWNER_ID" Type="Int32" Nullable="false" />
+    <Property Name="SPARE_INV_ID" Type="Int32" Nullable="false" />
+    <Property Name="SPARE_INV_NO" Type="Int32" Nullable="false" />
+    <Property Name="INVOICE_DATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="BILL_TYPE" Type="Byte" />
+    <Property Name="INVOICE_TYPE" Type="Byte" />
+    <Property Name="ORDER_TYPE" Type="Byte" Nullable="false" />
+    <Property Name="LOCATION_ID" Type="Int32" />
+    <Property Name="CUSTOMER_ID" Type="Int32" />
+    <Property Name="PICK_SLIP_ID" Type="Int32" />
+    <Property Name="PAYMENT_MODE_ID" Type="Int16" />
+    <Property Name="INVOICE_VALUE" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="DISCOUNT" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="ROUND_OFF" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="TOT_AMT_RECV" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="STATUS" Type="Byte" />
+    <Property Name="ACTIVE" Type="Boolean" Nullable="false" />
+    <Property Name="CUSTOMER_PO_NO" Type="Int32" />
+    <Property Name="CUSTOMER_PO_DATE" Type="DateTime" Precision="3" />
+    <Property Name="CREATED_BY" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CREATED_ON" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MODIFIED_BY" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="MODIFIED_ON" Type="DateTime" Precision="3" />
+    <Property Name="ROWGUID" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="tbl_CUSTOMER" Relationship="Self.fk_cust_spr_inv_cust" FromRole="tbl_SPARE_INVOICE" ToRole="tbl_CUSTOMER" />
+    <NavigationProperty Name="tbl_PAYMENT_MODE" Relationship="Self.fk_pay_mode_spr_inv" FromRole="tbl_SPARE_INVOICE" ToRole="tbl_PAYMENT_MODE" />
+    <NavigationProperty Name="tbl_PICK_SLIP" Relationship="Self.fk_pkslip_spr_inv" FromRole="tbl_SPARE_INVOICE" ToRole="tbl_PICK_SLIP" />
+    <NavigationProperty Name="tbl_SPARE_INVOICE_PART" Relationship="Self.fk_spare_inv_spare_inv_part" FromRole="tbl_SPARE_INVOICE" ToRole="tbl_SPARE_INVOICE_PART" />
+    <NavigationProperty Name="tbl_STORAGE_LOC" Relationship="Self.fk_stor_loc_spr_inv" FromRole="tbl_SPARE_INVOICE" ToRole="tbl_STORAGE_LOC" />
+  </EntityType>
+  <EntityType Name="tbl_SPARE_INVOICE_PART">
+    <Key>
+      <PropertyRef Name="OWNER_ID" />
+      <PropertyRef Name="SPARE_INV_PART_ID" />
+    </Key>
+    <Property Name="OWNER_ID" Type="Int32" Nullable="false" />
+    <Property Name="SPARE_INV_PART_ID" Type="Int32" Nullable="false" />
+    <Property Name="SPARE_PART_ID" Type="Int32" Nullable="false" />
+    <Property Name="SPARE_INV_ID" Type="Int32" Nullable="false" />
+    <Property Name="SALE_ORDER_ID" Type="Int32" />
+    <Property Name="INVOICE_QTY" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="UNIT_PRICE" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="MANUAL_DISC" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="TAX" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="PART_COST" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="MANUAL_DISCOUNT_PERCENT" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="ROWGUID" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="tbl_SPARE_INV_PART_DET" Relationship="Self.fk_spr_inv_part_spr_part_det" FromRole="tbl_SPARE_INVOICE_PART" ToRole="tbl_SPARE_INV_PART_DET" />
+    <NavigationProperty Name="tbl_SPARE_INVOICE" Relationship="Self.fk_spare_inv_spare_inv_part" FromRole="tbl_SPARE_INVOICE_PART" ToRole="tbl_SPARE_INVOICE" />
+    <NavigationProperty Name="tbl_SPARE_SALE_ORDER" Relationship="Self.fk_spr_sal_ord_spr_inv_part" FromRole="tbl_SPARE_INVOICE_PART" ToRole="tbl_SPARE_SALE_ORDER" />
+  </EntityType>
+  <EntityType Name="tbl_SPARE_PART">
+    <Key>
+      <PropertyRef Name="OWNER_ID" />
+      <PropertyRef Name="SPARE_PART_ID" />
+    </Key>
+    <Property Name="OWNER_ID" Type="Int32" Nullable="false" />
+    <Property Name="SPARE_PART_ID" Type="Int32" Nullable="false" />
+    <Property Name="PART_NO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="BLOCK_ORD" Type="Boolean" Nullable="false" />
+    <Property Name="ITEM_TYPE_ID" Type="Byte" />
+    <Property Name="BLOCK_FOR_ISSUE" Type="Boolean" Nullable="false" />
+    <Property Name="CREATED_BY" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CREATED_ON" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MODIFIED_BY" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="MODIFIED_ON" Type="DateTime" Precision="3" />
+    <Property Name="ACTIVE" Type="Boolean" Nullable="false" />
+    <Property Name="ROWGUID" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="tbl_ITEM_TYPE" Relationship="Self.fk_item_ty_spr_part" FromRole="tbl_SPARE_PART" ToRole="tbl_ITEM_TYPE" />
+    <NavigationProperty Name="tbl_SPARE_COST" Relationship="Self.fk_spr_part_spr_cost" FromRole="tbl_SPARE_PART" ToRole="tbl_SPARE_COST" />
+    <NavigationProperty Name="tbl_SPARE_PART_LOC" Relationship="Self.fk_spr_part_spr_part_loc" FromRole="tbl_SPARE_PART" ToRole="tbl_SPARE_PART_LOC" />
+  </EntityType>
+  <EntityType Name="tbl_SPARE_PART_LOC">
+    <Key>
+      <PropertyRef Name="OWNER_ID" />
+      <PropertyRef Name="PART_LOC_ID" />
+    </Key>
+    <Property Name="OWNER_ID" Type="Int32" Nullable="false" />
+    <Property Name="PART_LOC_ID" Type="Int32" Nullable="false" />
+    <Property Name="SPARE_PART_ID" Type="Int32" Nullable="false" />
+    <Property Name="LOCATION_ID" Type="Int32" />
+    <Property Name="SAFETY_STOCK" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="RACK_ID" Type="Int16" />
+    <Property Name="BIN_ID" Type="Int16" />
+    <Property Name="ROWGUID" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="tbl_BIN" Relationship="Self.fk_bin_spr_part_loc" FromRole="tbl_SPARE_PART_LOC" ToRole="tbl_BIN" />
+    <NavigationProperty Name="tbl_RACK" Relationship="Self.fk_rack_spr_part_loc" FromRole="tbl_SPARE_PART_LOC" ToRole="tbl_RACK" />
+    <NavigationProperty Name="tbl_SPARE_PART" Relationship="Self.fk_spr_part_spr_part_loc" FromRole="tbl_SPARE_PART_LOC" ToRole="tbl_SPARE_PART" />
+    <NavigationProperty Name="tbl_STORAGE_LOC" Relationship="Self.fk_stor_loc_spr_part_loc" FromRole="tbl_SPARE_PART_LOC" ToRole="tbl_STORAGE_LOC" />
+  </EntityType>
+  <EntityType Name="tbl_SPARE_PO">
+    <Key>
+      <PropertyRef Name="OWNER_ID" />
+      <PropertyRef Name="SPARE_PO_ID" />
+    </Key>
+    <Property Name="OWNER_ID" Type="Int32" Nullable="false" />
+    <Property Name="SPARE_PO_ID" Type="Int32" Nullable="false" />
+    <Property Name="SPARE_PO_NO" Type="Int32" Nullable="false" />
+    <Property Name="PO_DATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="VENDOR_ID" Type="Int16" />
+    <Property Name="ORDER_TYPE" Type="Byte" Nullable="false" />
+    <Property Name="REMARKS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="STATUS" Type="Byte" Nullable="false" />
+    <Property Name="SAP_SALE_ORDER_NO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SAP_SALE_ORD_DT" Type="DateTime" Precision="3" />
+    <Property Name="TOT_VAL" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="ACTIVE" Type="Boolean" Nullable="false" />
+    <Property Name="PO_CONFIRMED_DATE" Type="DateTime" Precision="3" />
+    <Property Name="CREATED_BY" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CREATED_ON" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MODIFIED_BY" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="MODIFIED_ON" Type="DateTime" Precision="3" />
+    <Property Name="ROWGUID" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="tbl_SPARE_PO_DET" Relationship="Self.fk_spr_po_spr_po_det" FromRole="tbl_SPARE_PO" ToRole="tbl_SPARE_PO_DET" />
+    <NavigationProperty Name="tbl_VENDOR" Relationship="Self.fk_vend_spr_po" FromRole="tbl_SPARE_PO" ToRole="tbl_VENDOR" />
+  </EntityType>
+  <EntityType Name="tbl_SPARE_PO_DET">
+    <Key>
+      <PropertyRef Name="OWNER_ID" />
+      <PropertyRef Name="SPARE_PO_DET_ID" />
+    </Key>
+    <Property Name="OWNER_ID" Type="Int32" Nullable="false" />
+    <Property Name="SPARE_PO_DET_ID" Type="Int32" Nullable="false" />
+    <Property Name="SPARE_PO_ID" Type="Int32" Nullable="false" />
+    <Property Name="SPARE_PART_ID" Type="Int32" Nullable="false" />
+    <Property Name="ORDER_QTY" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="PENDING_QTY" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="IN_TRANS_QTY" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="REJ_QTY" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="RECV_QTY" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="RATE" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="TAX" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="SEQ_NO" Type="Int32" />
+    <Property Name="ROWGUID" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="tbl_SPARE_PO" Relationship="Self.fk_spr_po_spr_po_det" FromRole="tbl_SPARE_PO_DET" ToRole="tbl_SPARE_PO" />
+  </EntityType>
+  <EntityType Name="tbl_SPARE_SALE_ORDER">
+    <Key>
+      <PropertyRef Name="OWNER_ID" />
+      <PropertyRef Name="SALE_ORDER_ID" />
+    </Key>
+    <Property Name="OWNER_ID" Type="Int32" Nullable="false" />
+    <Property Name="SALE_ORDER_ID" Type="Int32" Nullable="false" />
+    <Property Name="SALE_ORDER_NO" Type="Int32" />
+    <Property Name="ORDER_DATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LOCATION_ID" Type="Int32" />
+    <Property Name="CUSTOMER_ID" Type="Int32" />
+    <Property Name="PAYMENT_MODE_ID" Type="Int16" />
+    <Property Name="REF_CUST_PO" Type="Int32" />
+    <Property Name="REF_CUST_PO_DATE" Type="DateTime" Precision="3" />
+    <Property Name="BILL_TYPE" Type="Byte" />
+    <Property Name="ORDER_VALUE" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="STATUS" Type="Byte" Nullable="false" />
+    <Property Name="PICKSLIP_EXISTS" Type="Boolean" Nullable="false" />
+    <Property Name="REASON_ID" Type="Int16" />
+    <Property Name="CREATED_BY" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CREATED_ON" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MODIFIED_BY" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="MODIFIED_ON" Type="DateTime" Precision="3" />
+    <Property Name="ACTIVE" Type="Boolean" Nullable="false" />
+    <Property Name="ROWGUID" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="tbl_CUSTOMER" Relationship="Self.fk_cust_spr_so_cust" FromRole="tbl_SPARE_SALE_ORDER" ToRole="tbl_CUSTOMER" />
+    <NavigationProperty Name="tbl_PAYMENT_MODE" Relationship="Self.fk_pay_mod_spr_so" FromRole="tbl_SPARE_SALE_ORDER" ToRole="tbl_PAYMENT_MODE" />
+    <NavigationProperty Name="tbl_PICK_SLIP_PART" Relationship="Self.fk_spr_so_pick_slip_part" FromRole="tbl_SPARE_SALE_ORDER" ToRole="tbl_PICK_SLIP_PART" />
+    <NavigationProperty Name="tbl_PICK_SLIP_SO" Relationship="Self.fk_spr_so_pkslip_so" FromRole="tbl_SPARE_SALE_ORDER" ToRole="tbl_PICK_SLIP_SO" />
+    <NavigationProperty Name="tbl_SO_CLOSE_REASON" Relationship="Self.fk_so_clos_rsn_spr_sal_ord" FromRole="tbl_SPARE_SALE_ORDER" ToRole="tbl_SO_CLOSE_REASON" />
+    <NavigationProperty Name="tbl_SPARE_INVOICE_PART" Relationship="Self.fk_spr_sal_ord_spr_inv_part" FromRole="tbl_SPARE_SALE_ORDER" ToRole="tbl_SPARE_INVOICE_PART" />
+    <NavigationProperty Name="tbl_SPARE_SO_PART" Relationship="Self.fk_spr_so_spr_so_part" FromRole="tbl_SPARE_SALE_ORDER" ToRole="tbl_SPARE_SO_PART" />
+    <NavigationProperty Name="tbl_STORAGE_LOC" Relationship="Self.fk_stor_loc_spr_sal_ord" FromRole="tbl_SPARE_SALE_ORDER" ToRole="tbl_STORAGE_LOC" />
+  </EntityType>
+  <EntityType Name="tbl_SPARE_SO_PART">
+    <Key>
+      <PropertyRef Name="OWNER_ID" />
+      <PropertyRef Name="SPARE_SO_PART_ID" />
+    </Key>
+    <Property Name="OWNER_ID" Type="Int32" Nullable="false" />
+    <Property Name="SPARE_SO_PART_ID" Type="Int32" Nullable="false" />
+    <Property Name="SALE_ORDER_ID" Type="Int32" Nullable="false" />
+    <Property Name="SPARE_PART_ID" Type="Int32" Nullable="false" />
+    <Property Name="QUANTITY" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="RATE" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="STATUS" Type="Byte" />
+    <Property Name="REASON_ID" Type="Int16" />
+    <Property Name="PICKSLIP_EXISTS" Type="Boolean" Nullable="false" />
+    <Property Name="MRP" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="SPARE_PO_PART_ID" Type="Int32" />
+    <Property Name="ROWGUID" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="tbl_SO_CLOSE_REASON" Relationship="Self.fk_so_clos_rsn_sal_ord_part" FromRole="tbl_SPARE_SO_PART" ToRole="tbl_SO_CLOSE_REASON" />
+    <NavigationProperty Name="tbl_SPARE_SALE_ORDER" Relationship="Self.fk_spr_so_spr_so_part" FromRole="tbl_SPARE_SO_PART" ToRole="tbl_SPARE_SALE_ORDER" />
+  </EntityType>
+  <EntityType Name="tbl_STATE">
+    <Key>
+      <PropertyRef Name="STATE_ID" />
+    </Key>
+    <Property Name="STATE_ID" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="STATE_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CREATED_BY" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CREATED_ON" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MODIFIED_BY" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="MODIFIED_ON" Type="DateTime" Precision="3" />
+    <Property Name="ACTIVE" Type="Boolean" Nullable="false" />
+    <Property Name="ROWGUID" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="tbl_CUSTOMER_ADDRESS" Relationship="Self.fk_state_cust_add" FromRole="tbl_STATE" ToRole="tbl_CUSTOMER_ADDRESS" />
+    <NavigationProperty Name="tbl_VENDOR" Relationship="Self.fk_state_vendor" FromRole="tbl_STATE" ToRole="tbl_VENDOR" />
+  </EntityType>
+  <EntityType Name="tbl_STORAGE_LOC">
+    <Key>
+      <PropertyRef Name="OWNER_ID" />
+      <PropertyRef Name="LOCATION_ID" />
+    </Key>
+    <Property Name="OWNER_ID" Type="Int32" Nullable="false" />
+    <Property Name="LOCATION_ID" Type="Int32" Nullable="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ADDRESS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CREATED_ON" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MODIFIED_BY" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="MODIFIED_ON" Type="DateTime" Precision="3" />
+    <Property Name="ACTIVE" Type="Boolean" Nullable="false" />
+    <Property Name="DEF_SALE_ORD_LOC" Type="Boolean" />
+    <Property Name="ROWGUID" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="tbl_PART_MFR_LOC_RACK_BIN" Relationship="Self.fk_loc_part_mfrlocrkbn" FromRole="tbl_STORAGE_LOC" ToRole="tbl_PART_MFR_LOC_RACK_BIN" />
+    <NavigationProperty Name="tbl_RACK" Relationship="Self.fk_stor_loc_rack_stor_loc_id" FromRole="tbl_STORAGE_LOC" ToRole="tbl_RACK" />
+    <NavigationProperty Name="tbl_SPARE_INVOICE" Relationship="Self.fk_stor_loc_spr_inv" FromRole="tbl_STORAGE_LOC" ToRole="tbl_SPARE_INVOICE" />
+    <NavigationProperty Name="tbl_SPARE_PART_LOC" Relationship="Self.fk_stor_loc_spr_part_loc" FromRole="tbl_STORAGE_LOC" ToRole="tbl_SPARE_PART_LOC" />
+    <NavigationProperty Name="tbl_SPARE_SALE_ORDER" Relationship="Self.fk_stor_loc_spr_sal_ord" FromRole="tbl_STORAGE_LOC" ToRole="tbl_SPARE_SALE_ORDER" />
+  </EntityType>
+  <EntityType Name="tbl_USER">
+    <Key>
+      <PropertyRef Name="USER_PROFILE_ID" />
+    </Key>
+    <Property Name="USER_PROFILE_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PASSWORD" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ROWGUID" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="tbl_USER_ROLE" Relationship="Self.fk_user_user_role" FromRole="tbl_USER" ToRole="tbl_USER_ROLE" />
+  </EntityType>
+  <EntityType Name="tbl_USER_ROLE">
+    <Key>
+      <PropertyRef Name="ROLE_ID" />
+      <PropertyRef Name="USER_PROFILE_ID" />
+    </Key>
+    <Property Name="ROLE_ID" Type="Int16" Nullable="false" />
+    <Property Name="USER_PROFILE_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ROWGUID" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="tbl_ROLE" Relationship="Self.fk_role_user_role_role_id" FromRole="tbl_USER_ROLE" ToRole="tbl_ROLE" />
+    <NavigationProperty Name="tbl_USER" Relationship="Self.fk_user_user_role" FromRole="tbl_USER_ROLE" ToRole="tbl_USER" />
+  </EntityType>
+  <EntityType Name="tbl_VENDOR">
+    <Key>
+      <PropertyRef Name="VENDOR_ID" />
+    </Key>
+    <Property Name="VENDOR_ID" Type="Int16" Nullable="false" />
+    <Property Name="VENDOR_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="ADDRESS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CRED_LIM" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="CREATED_BY" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CREATED_ON" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MODIFIED_BY" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="MODIFIED_ON" Type="DateTime" Precision="3" />
+    <Property Name="ACTIVE" Type="Boolean" Nullable="false" />
+    <Property Name="STATE_ID" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="ROWGUID" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="tbl_SPARE_PO" Relationship="Self.fk_vend_spr_po" FromRole="tbl_VENDOR" ToRole="tbl_SPARE_PO" />
+    <NavigationProperty Name="tbl_STATE" Relationship="Self.fk_state_vendor" FromRole="tbl_VENDOR" ToRole="tbl_STATE" />
+  </EntityType>
+  <Association Name="fk_area_cust_add">
+    <End Role="tbl_AREA" Type="Self.tbl_AREA" Multiplicity="0..1" />
+    <End Role="tbl_CUSTOMER_ADDRESS" Type="Self.tbl_CUSTOMER_ADDRESS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_AREA">
+        <PropertyRef Name="AREA_ID" />
+      </Principal>
+      <Dependent Role="tbl_CUSTOMER_ADDRESS">
+        <PropertyRef Name="AREA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_bin_part_mfrlcrkbn">
+    <End Role="tbl_BIN" Type="Self.tbl_BIN" Multiplicity="1" />
+    <End Role="tbl_PART_MFR_LOC_RACK_BIN" Type="Self.tbl_PART_MFR_LOC_RACK_BIN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_BIN">
+        <PropertyRef Name="OWNER_ID" />
+        <PropertyRef Name="BIN_ID" />
+      </Principal>
+      <Dependent Role="tbl_PART_MFR_LOC_RACK_BIN">
+        <PropertyRef Name="OWNER_ID" />
+        <PropertyRef Name="BIN_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_bin_spr_part_loc">
+    <End Role="tbl_BIN" Type="Self.tbl_BIN" Multiplicity="0..1" />
+    <End Role="tbl_SPARE_PART_LOC" Type="Self.tbl_SPARE_PART_LOC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_BIN">
+        <PropertyRef Name="OWNER_ID" />
+        <PropertyRef Name="BIN_ID" />
+      </Principal>
+      <Dependent Role="tbl_SPARE_PART_LOC">
+        <PropertyRef Name="OWNER_ID" />
+        <PropertyRef Name="BIN_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_rack_bin">
+    <End Role="tbl_RACK" Type="Self.tbl_RACK" Multiplicity="1" />
+    <End Role="tbl_BIN" Type="Self.tbl_BIN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_RACK">
+        <PropertyRef Name="OWNER_ID" />
+        <PropertyRef Name="RACK_ID" />
+      </Principal>
+      <Dependent Role="tbl_BIN">
+        <PropertyRef Name="OWNER_ID" />
+        <PropertyRef Name="RACK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_cust_cust_add">
+    <End Role="tbl_CUSTOMER" Type="Self.tbl_CUSTOMER" Multiplicity="1" />
+    <End Role="tbl_CUSTOMER_ADDRESS" Type="Self.tbl_CUSTOMER_ADDRESS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_CUSTOMER">
+        <PropertyRef Name="CUSTOMER_ID" />
+      </Principal>
+      <Dependent Role="tbl_CUSTOMER_ADDRESS">
+        <PropertyRef Name="CUSTOMER_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_cust_spr_inv_cust">
+    <End Role="tbl_CUSTOMER" Type="Self.tbl_CUSTOMER" Multiplicity="0..1" />
+    <End Role="tbl_SPARE_INVOICE" Type="Self.tbl_SPARE_INVOICE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_CUSTOMER">
+        <PropertyRef Name="CUSTOMER_ID" />
+      </Principal>
+      <Dependent Role="tbl_SPARE_INVOICE">
+        <PropertyRef Name="CUSTOMER_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_cust_spr_so_cust">
+    <End Role="tbl_CUSTOMER" Type="Self.tbl_CUSTOMER" Multiplicity="0..1" />
+    <End Role="tbl_SPARE_SALE_ORDER" Type="Self.tbl_SPARE_SALE_ORDER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_CUSTOMER">
+        <PropertyRef Name="CUSTOMER_ID" />
+      </Principal>
+      <Dependent Role="tbl_SPARE_SALE_ORDER">
+        <PropertyRef Name="CUSTOMER_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_cust_type_cust">
+    <End Role="tbl_CUSTOMER_TYPE" Type="Self.tbl_CUSTOMER_TYPE" Multiplicity="0..1" />
+    <End Role="tbl_CUSTOMER" Type="Self.tbl_CUSTOMER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_CUSTOMER_TYPE">
+        <PropertyRef Name="CUST_TY_ID" />
+      </Principal>
+      <Dependent Role="tbl_CUSTOMER">
+        <PropertyRef Name="CUST_TY_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_state_cust_add">
+    <End Role="tbl_STATE" Type="Self.tbl_STATE" Multiplicity="0..1" />
+    <End Role="tbl_CUSTOMER_ADDRESS" Type="Self.tbl_CUSTOMER_ADDRESS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_STATE">
+        <PropertyRef Name="STATE_ID" />
+      </Principal>
+      <Dependent Role="tbl_CUSTOMER_ADDRESS">
+        <PropertyRef Name="STATE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_grp_proc_grp_id">
+    <End Role="tbl_GROUP" Type="Self.tbl_GROUP" Multiplicity="0..1" />
+    <End Role="tbl_PROCESS" Type="Self.tbl_PROCESS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_GROUP">
+        <PropertyRef Name="GROUP_ID" />
+      </Principal>
+      <Dependent Role="tbl_PROCESS">
+        <PropertyRef Name="GROUP_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_item_ty_spr_part">
+    <End Role="tbl_ITEM_TYPE" Type="Self.tbl_ITEM_TYPE" Multiplicity="0..1" />
+    <End Role="tbl_SPARE_PART" Type="Self.tbl_SPARE_PART" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_ITEM_TYPE">
+        <PropertyRef Name="ITEM_TYPE_ID" />
+      </Principal>
+      <Dependent Role="tbl_SPARE_PART">
+        <PropertyRef Name="ITEM_TYPE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_process_menu">
+    <End Role="tbl_PROCESS" Type="Self.tbl_PROCESS" Multiplicity="0..1" />
+    <End Role="tbl_MENU" Type="Self.tbl_MENU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_PROCESS">
+        <PropertyRef Name="PROCESS" />
+      </Principal>
+      <Dependent Role="tbl_MENU">
+        <PropertyRef Name="PROCESS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_loc_part_mfrlocrkbn">
+    <End Role="tbl_STORAGE_LOC" Type="Self.tbl_STORAGE_LOC" Multiplicity="1" />
+    <End Role="tbl_PART_MFR_LOC_RACK_BIN" Type="Self.tbl_PART_MFR_LOC_RACK_BIN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_STORAGE_LOC">
+        <PropertyRef Name="OWNER_ID" />
+        <PropertyRef Name="LOCATION_ID" />
+      </Principal>
+      <Dependent Role="tbl_PART_MFR_LOC_RACK_BIN">
+        <PropertyRef Name="OWNER_ID" />
+        <PropertyRef Name="LOCATION_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_rack_part_mfrlcrkbn">
+    <End Role="tbl_RACK" Type="Self.tbl_RACK" Multiplicity="1" />
+    <End Role="tbl_PART_MFR_LOC_RACK_BIN" Type="Self.tbl_PART_MFR_LOC_RACK_BIN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_RACK">
+        <PropertyRef Name="OWNER_ID" />
+        <PropertyRef Name="RACK_ID" />
+      </Principal>
+      <Dependent Role="tbl_PART_MFR_LOC_RACK_BIN">
+        <PropertyRef Name="OWNER_ID" />
+        <PropertyRef Name="RACK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_pay_mod_spr_so">
+    <End Role="tbl_PAYMENT_MODE" Type="Self.tbl_PAYMENT_MODE" Multiplicity="0..1" />
+    <End Role="tbl_SPARE_SALE_ORDER" Type="Self.tbl_SPARE_SALE_ORDER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_PAYMENT_MODE">
+        <PropertyRef Name="PAYMENT_MODE_ID" />
+      </Principal>
+      <Dependent Role="tbl_SPARE_SALE_ORDER">
+        <PropertyRef Name="PAYMENT_MODE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_pay_mode_spr_inv">
+    <End Role="tbl_PAYMENT_MODE" Type="Self.tbl_PAYMENT_MODE" Multiplicity="0..1" />
+    <End Role="tbl_SPARE_INVOICE" Type="Self.tbl_SPARE_INVOICE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_PAYMENT_MODE">
+        <PropertyRef Name="PAYMENT_MODE_ID" />
+      </Principal>
+      <Dependent Role="tbl_SPARE_INVOICE">
+        <PropertyRef Name="PAYMENT_MODE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_proc_perm_process">
+    <End Role="tbl_PROCESS" Type="Self.tbl_PROCESS" Multiplicity="0..1" />
+    <End Role="tbl_PERMISSION" Type="Self.tbl_PERMISSION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_PROCESS">
+        <PropertyRef Name="PROCESS" />
+      </Principal>
+      <Dependent Role="tbl_PERMISSION">
+        <PropertyRef Name="PROCESS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_role_perm_role_id">
+    <End Role="tbl_ROLE" Type="Self.tbl_ROLE" Multiplicity="0..1" />
+    <End Role="tbl_PERMISSION" Type="Self.tbl_PERMISSION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_ROLE">
+        <PropertyRef Name="ROLE_ID" />
+      </Principal>
+      <Dependent Role="tbl_PERMISSION">
+        <PropertyRef Name="ROLE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_pick_slip_pick_slip_part">
+    <End Role="tbl_PICK_SLIP" Type="Self.tbl_PICK_SLIP" Multiplicity="1" />
+    <End Role="tbl_PICK_SLIP_PART" Type="Self.tbl_PICK_SLIP_PART" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_PICK_SLIP">
+        <PropertyRef Name="OWNER_ID" />
+        <PropertyRef Name="PICK_SLIP_ID" />
+      </Principal>
+      <Dependent Role="tbl_PICK_SLIP_PART">
+        <PropertyRef Name="OWNER_ID" />
+        <PropertyRef Name="PICK_SLIP_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_pkslip_pkslip_so">
+    <End Role="tbl_PICK_SLIP" Type="Self.tbl_PICK_SLIP" Multiplicity="1" />
+    <End Role="tbl_PICK_SLIP_SO" Type="Self.tbl_PICK_SLIP_SO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_PICK_SLIP">
+        <PropertyRef Name="OWNER_ID" />
+        <PropertyRef Name="PICK_SLIP_ID" />
+      </Principal>
+      <Dependent Role="tbl_PICK_SLIP_SO">
+        <PropertyRef Name="OWNER_ID" />
+        <PropertyRef Name="PICK_SLIP_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_pkslip_spr_inv">
+    <End Role="tbl_PICK_SLIP" Type="Self.tbl_PICK_SLIP" Multiplicity="0..1" />
+    <End Role="tbl_SPARE_INVOICE" Type="Self.tbl_SPARE_INVOICE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_PICK_SLIP">
+        <PropertyRef Name="OWNER_ID" />
+        <PropertyRef Name="PICK_SLIP_ID" />
+      </Principal>
+      <Dependent Role="tbl_SPARE_INVOICE">
+        <PropertyRef Name="OWNER_ID" />
+        <PropertyRef Name="PICK_SLIP_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_pkslp_part_pkslip_part_det">
+    <End Role="tbl_PICK_SLIP_PART" Type="Self.tbl_PICK_SLIP_PART" Multiplicity="0..1" />
+    <End Role="tbl_PICK_SLIP_PART_DET" Type="Self.tbl_PICK_SLIP_PART_DET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_PICK_SLIP_PART">
+        <PropertyRef Name="OWNER_ID" />
+        <PropertyRef Name="PICK_SLIP_PART_ID" />
+      </Principal>
+      <Dependent Role="tbl_PICK_SLIP_PART_DET">
+        <PropertyRef Name="OWNER_ID" />
+        <PropertyRef Name="PICK_SLIP_PART_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_spr_so_pick_slip_part">
+    <End Role="tbl_SPARE_SALE_ORDER" Type="Self.tbl_SPARE_SALE_ORDER" Multiplicity="0..1" />
+    <End Role="tbl_PICK_SLIP_PART" Type="Self.tbl_PICK_SLIP_PART" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_SPARE_SALE_ORDER">
+        <PropertyRef Name="OWNER_ID" />
+        <PropertyRef Name="SALE_ORDER_ID" />
+      </Principal>
+      <Dependent Role="tbl_PICK_SLIP_PART">
+        <PropertyRef Name="OWNER_ID" />
+        <PropertyRef Name="SALE_ORDER_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_spr_so_pkslip_so">
+    <End Role="tbl_SPARE_SALE_ORDER" Type="Self.tbl_SPARE_SALE_ORDER" Multiplicity="1" />
+    <End Role="tbl_PICK_SLIP_SO" Type="Self.tbl_PICK_SLIP_SO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_SPARE_SALE_ORDER">
+        <PropertyRef Name="OWNER_ID" />
+        <PropertyRef Name="SALE_ORDER_ID" />
+      </Principal>
+      <Dependent Role="tbl_PICK_SLIP_SO">
+        <PropertyRef Name="OWNER_ID" />
+        <PropertyRef Name="SALE_ORDER_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_rack_spr_part_loc">
+    <End Role="tbl_RACK" Type="Self.tbl_RACK" Multiplicity="0..1" />
+    <End Role="tbl_SPARE_PART_LOC" Type="Self.tbl_SPARE_PART_LOC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_RACK">
+        <PropertyRef Name="OWNER_ID" />
+        <PropertyRef Name="RACK_ID" />
+      </Principal>
+      <Dependent Role="tbl_SPARE_PART_LOC">
+        <PropertyRef Name="OWNER_ID" />
+        <PropertyRef Name="RACK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_stor_loc_rack_stor_loc_id">
+    <End Role="tbl_STORAGE_LOC" Type="Self.tbl_STORAGE_LOC" Multiplicity="0..1" />
+    <End Role="tbl_RACK" Type="Self.tbl_RACK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_STORAGE_LOC">
+        <PropertyRef Name="OWNER_ID" />
+        <PropertyRef Name="LOCATION_ID" />
+      </Principal>
+      <Dependent Role="tbl_RACK">
+        <PropertyRef Name="OWNER_ID" />
+        <PropertyRef Name="LOCATION_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_role_user_role_role_id">
+    <End Role="tbl_ROLE" Type="Self.tbl_ROLE" Multiplicity="1" />
+    <End Role="tbl_USER_ROLE" Type="Self.tbl_USER_ROLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_ROLE">
+        <PropertyRef Name="ROLE_ID" />
+      </Principal>
+      <Dependent Role="tbl_USER_ROLE">
+        <PropertyRef Name="ROLE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_so_clos_rsn_sal_ord_part">
+    <End Role="tbl_SO_CLOSE_REASON" Type="Self.tbl_SO_CLOSE_REASON" Multiplicity="0..1" />
+    <End Role="tbl_SPARE_SO_PART" Type="Self.tbl_SPARE_SO_PART" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_SO_CLOSE_REASON">
+        <PropertyRef Name="REASON_ID" />
+      </Principal>
+      <Dependent Role="tbl_SPARE_SO_PART">
+        <PropertyRef Name="REASON_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_so_clos_rsn_spr_sal_ord">
+    <End Role="tbl_SO_CLOSE_REASON" Type="Self.tbl_SO_CLOSE_REASON" Multiplicity="0..1" />
+    <End Role="tbl_SPARE_SALE_ORDER" Type="Self.tbl_SPARE_SALE_ORDER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_SO_CLOSE_REASON">
+        <PropertyRef Name="REASON_ID" />
+      </Principal>
+      <Dependent Role="tbl_SPARE_SALE_ORDER">
+        <PropertyRef Name="REASON_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_spr_part_spr_cost">
+    <End Role="tbl_SPARE_PART" Type="Self.tbl_SPARE_PART" Multiplicity="1" />
+    <End Role="tbl_SPARE_COST" Type="Self.tbl_SPARE_COST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_SPARE_PART">
+        <PropertyRef Name="OWNER_ID" />
+        <PropertyRef Name="SPARE_PART_ID" />
+      </Principal>
+      <Dependent Role="tbl_SPARE_COST">
+        <PropertyRef Name="OWNER_ID" />
+        <PropertyRef Name="SPARE_PART_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_spr_inv_part_spr_part_det">
+    <End Role="tbl_SPARE_INVOICE_PART" Type="Self.tbl_SPARE_INVOICE_PART" Multiplicity="1" />
+    <End Role="tbl_SPARE_INV_PART_DET" Type="Self.tbl_SPARE_INV_PART_DET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_SPARE_INVOICE_PART">
+        <PropertyRef Name="OWNER_ID" />
+        <PropertyRef Name="SPARE_INV_PART_ID" />
+      </Principal>
+      <Dependent Role="tbl_SPARE_INV_PART_DET">
+        <PropertyRef Name="OWNER_ID" />
+        <PropertyRef Name="SPARE_INV_PART_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_spare_inv_spare_inv_part">
+    <End Role="tbl_SPARE_INVOICE" Type="Self.tbl_SPARE_INVOICE" Multiplicity="1" />
+    <End Role="tbl_SPARE_INVOICE_PART" Type="Self.tbl_SPARE_INVOICE_PART" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_SPARE_INVOICE">
+        <PropertyRef Name="OWNER_ID" />
+        <PropertyRef Name="SPARE_INV_ID" />
+      </Principal>
+      <Dependent Role="tbl_SPARE_INVOICE_PART">
+        <PropertyRef Name="OWNER_ID" />
+        <PropertyRef Name="SPARE_INV_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_stor_loc_spr_inv">
+    <End Role="tbl_STORAGE_LOC" Type="Self.tbl_STORAGE_LOC" Multiplicity="0..1" />
+    <End Role="tbl_SPARE_INVOICE" Type="Self.tbl_SPARE_INVOICE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_STORAGE_LOC">
+        <PropertyRef Name="OWNER_ID" />
+        <PropertyRef Name="LOCATION_ID" />
+      </Principal>
+      <Dependent Role="tbl_SPARE_INVOICE">
+        <PropertyRef Name="OWNER_ID" />
+        <PropertyRef Name="LOCATION_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_spr_sal_ord_spr_inv_part">
+    <End Role="tbl_SPARE_SALE_ORDER" Type="Self.tbl_SPARE_SALE_ORDER" Multiplicity="0..1" />
+    <End Role="tbl_SPARE_INVOICE_PART" Type="Self.tbl_SPARE_INVOICE_PART" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_SPARE_SALE_ORDER">
+        <PropertyRef Name="OWNER_ID" />
+        <PropertyRef Name="SALE_ORDER_ID" />
+      </Principal>
+      <Dependent Role="tbl_SPARE_INVOICE_PART">
+        <PropertyRef Name="OWNER_ID" />
+        <PropertyRef Name="SALE_ORDER_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_spr_part_spr_part_loc">
+    <End Role="tbl_SPARE_PART" Type="Self.tbl_SPARE_PART" Multiplicity="1" />
+    <End Role="tbl_SPARE_PART_LOC" Type="Self.tbl_SPARE_PART_LOC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_SPARE_PART">
+        <PropertyRef Name="OWNER_ID" />
+        <PropertyRef Name="SPARE_PART_ID" />
+      </Principal>
+      <Dependent Role="tbl_SPARE_PART_LOC">
+        <PropertyRef Name="OWNER_ID" />
+        <PropertyRef Name="SPARE_PART_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_stor_loc_spr_part_loc">
+    <End Role="tbl_STORAGE_LOC" Type="Self.tbl_STORAGE_LOC" Multiplicity="0..1" />
+    <End Role="tbl_SPARE_PART_LOC" Type="Self.tbl_SPARE_PART_LOC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_STORAGE_LOC">
+        <PropertyRef Name="OWNER_ID" />
+        <PropertyRef Name="LOCATION_ID" />
+      </Principal>
+      <Dependent Role="tbl_SPARE_PART_LOC">
+        <PropertyRef Name="OWNER_ID" />
+        <PropertyRef Name="LOCATION_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_spr_po_spr_po_det">
+    <End Role="tbl_SPARE_PO" Type="Self.tbl_SPARE_PO" Multiplicity="1" />
+    <End Role="tbl_SPARE_PO_DET" Type="Self.tbl_SPARE_PO_DET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_SPARE_PO">
+        <PropertyRef Name="OWNER_ID" />
+        <PropertyRef Name="SPARE_PO_ID" />
+      </Principal>
+      <Dependent Role="tbl_SPARE_PO_DET">
+        <PropertyRef Name="OWNER_ID" />
+        <PropertyRef Name="SPARE_PO_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_vend_spr_po">
+    <End Role="tbl_VENDOR" Type="Self.tbl_VENDOR" Multiplicity="0..1" />
+    <End Role="tbl_SPARE_PO" Type="Self.tbl_SPARE_PO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_VENDOR">
+        <PropertyRef Name="VENDOR_ID" />
+      </Principal>
+      <Dependent Role="tbl_SPARE_PO">
+        <PropertyRef Name="VENDOR_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_spr_so_spr_so_part">
+    <End Role="tbl_SPARE_SALE_ORDER" Type="Self.tbl_SPARE_SALE_ORDER" Multiplicity="1" />
+    <End Role="tbl_SPARE_SO_PART" Type="Self.tbl_SPARE_SO_PART" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_SPARE_SALE_ORDER">
+        <PropertyRef Name="OWNER_ID" />
+        <PropertyRef Name="SALE_ORDER_ID" />
+      </Principal>
+      <Dependent Role="tbl_SPARE_SO_PART">
+        <PropertyRef Name="OWNER_ID" />
+        <PropertyRef Name="SALE_ORDER_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_stor_loc_spr_sal_ord">
+    <End Role="tbl_STORAGE_LOC" Type="Self.tbl_STORAGE_LOC" Multiplicity="0..1" />
+    <End Role="tbl_SPARE_SALE_ORDER" Type="Self.tbl_SPARE_SALE_ORDER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_STORAGE_LOC">
+        <PropertyRef Name="OWNER_ID" />
+        <PropertyRef Name="LOCATION_ID" />
+      </Principal>
+      <Dependent Role="tbl_SPARE_SALE_ORDER">
+        <PropertyRef Name="OWNER_ID" />
+        <PropertyRef Name="LOCATION_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_state_vendor">
+    <End Role="tbl_STATE" Type="Self.tbl_STATE" Multiplicity="0..1" />
+    <End Role="tbl_VENDOR" Type="Self.tbl_VENDOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_STATE">
+        <PropertyRef Name="STATE_ID" />
+      </Principal>
+      <Dependent Role="tbl_VENDOR">
+        <PropertyRef Name="STATE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_user_user_role">
+    <End Role="tbl_USER" Type="Self.tbl_USER" Multiplicity="1" />
+    <End Role="tbl_USER_ROLE" Type="Self.tbl_USER_ROLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_USER">
+        <PropertyRef Name="USER_PROFILE_ID" />
+      </Principal>
+      <Dependent Role="tbl_USER_ROLE">
+        <PropertyRef Name="USER_PROFILE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Stop2ShopEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tbl_AREA" EntityType="Self.tbl_AREA" />
+    <EntitySet Name="tbl_BIN" EntityType="Self.tbl_BIN" />
+    <EntitySet Name="tbl_CUSTOMER" EntityType="Self.tbl_CUSTOMER" />
+    <EntitySet Name="tbl_CUSTOMER_ADDRESS" EntityType="Self.tbl_CUSTOMER_ADDRESS" />
+    <EntitySet Name="tbl_CUSTOMER_TYPE" EntityType="Self.tbl_CUSTOMER_TYPE" />
+    <EntitySet Name="tbl_GROUP" EntityType="Self.tbl_GROUP" />
+    <EntitySet Name="tbl_ID_TABLE" EntityType="Self.tbl_ID_TABLE" />
+    <EntitySet Name="tbl_ITEM_TYPE" EntityType="Self.tbl_ITEM_TYPE" />
+    <EntitySet Name="tbl_MENU" EntityType="Self.tbl_MENU" />
+    <EntitySet Name="tbl_PART_MFR_LOC_RACK_BIN" EntityType="Self.tbl_PART_MFR_LOC_RACK_BIN" />
+    <EntitySet Name="tbl_PAYMENT_MODE" EntityType="Self.tbl_PAYMENT_MODE" />
+    <EntitySet Name="tbl_PERMISSION" EntityType="Self.tbl_PERMISSION" />
+    <EntitySet Name="tbl_PICK_SLIP" EntityType="Self.tbl_PICK_SLIP" />
+    <EntitySet Name="tbl_PICK_SLIP_PART" EntityType="Self.tbl_PICK_SLIP_PART" />
+    <EntitySet Name="tbl_PICK_SLIP_PART_DET" EntityType="Self.tbl_PICK_SLIP_PART_DET" />
+    <EntitySet Name="tbl_PICK_SLIP_SO" EntityType="Self.tbl_PICK_SLIP_SO" />
+    <EntitySet Name="tbl_PROCESS" EntityType="Self.tbl_PROCESS" />
+    <EntitySet Name="tbl_RACK" EntityType="Self.tbl_RACK" />
+    <EntitySet Name="tbl_ROLE" EntityType="Self.tbl_ROLE" />
+    <EntitySet Name="tbl_SO_CLOSE_REASON" EntityType="Self.tbl_SO_CLOSE_REASON" />
+    <EntitySet Name="tbl_SPARE_COST" EntityType="Self.tbl_SPARE_COST" />
+    <EntitySet Name="tbl_SPARE_INV_PART_DET" EntityType="Self.tbl_SPARE_INV_PART_DET" />
+    <EntitySet Name="tbl_SPARE_INVOICE" EntityType="Self.tbl_SPARE_INVOICE" />
+    <EntitySet Name="tbl_SPARE_INVOICE_PART" EntityType="Self.tbl_SPARE_INVOICE_PART" />
+    <EntitySet Name="tbl_SPARE_PART" EntityType="Self.tbl_SPARE_PART" />
+    <EntitySet Name="tbl_SPARE_PART_LOC" EntityType="Self.tbl_SPARE_PART_LOC" />
+    <EntitySet Name="tbl_SPARE_PO" EntityType="Self.tbl_SPARE_PO" />
+    <EntitySet Name="tbl_SPARE_PO_DET" EntityType="Self.tbl_SPARE_PO_DET" />
+    <EntitySet Name="tbl_SPARE_SALE_ORDER" EntityType="Self.tbl_SPARE_SALE_ORDER" />
+    <EntitySet Name="tbl_SPARE_SO_PART" EntityType="Self.tbl_SPARE_SO_PART" />
+    <EntitySet Name="tbl_STATE" EntityType="Self.tbl_STATE" />
+    <EntitySet Name="tbl_STORAGE_LOC" EntityType="Self.tbl_STORAGE_LOC" />
+    <EntitySet Name="tbl_USER" EntityType="Self.tbl_USER" />
+    <EntitySet Name="tbl_USER_ROLE" EntityType="Self.tbl_USER_ROLE" />
+    <EntitySet Name="tbl_VENDOR" EntityType="Self.tbl_VENDOR" />
+    <AssociationSet Name="fk_area_cust_add" Association="Self.fk_area_cust_add">
+      <End Role="tbl_AREA" EntitySet="tbl_AREA" />
+      <End Role="tbl_CUSTOMER_ADDRESS" EntitySet="tbl_CUSTOMER_ADDRESS" />
+    </AssociationSet>
+    <AssociationSet Name="fk_bin_part_mfrlcrkbn" Association="Self.fk_bin_part_mfrlcrkbn">
+      <End Role="tbl_BIN" EntitySet="tbl_BIN" />
+      <End Role="tbl_PART_MFR_LOC_RACK_BIN" EntitySet="tbl_PART_MFR_LOC_RACK_BIN" />
+    </AssociationSet>
+    <AssociationSet Name="fk_bin_spr_part_loc" Association="Self.fk_bin_spr_part_loc">
+      <End Role="tbl_BIN" EntitySet="tbl_BIN" />
+      <End Role="tbl_SPARE_PART_LOC" EntitySet="tbl_SPARE_PART_LOC" />
+    </AssociationSet>
+    <AssociationSet Name="fk_rack_bin" Association="Self.fk_rack_bin">
+      <End Role="tbl_RACK" EntitySet="tbl_RACK" />
+      <End Role="tbl_BIN" EntitySet="tbl_BIN" />
+    </AssociationSet>
+    <AssociationSet Name="fk_cust_cust_add" Association="Self.fk_cust_cust_add">
+      <End Role="tbl_CUSTOMER" EntitySet="tbl_CUSTOMER" />
+      <End Role="tbl_CUSTOMER_ADDRESS" EntitySet="tbl_CUSTOMER_ADDRESS" />
+    </AssociationSet>
+    <AssociationSet Name="fk_cust_spr_inv_cust" Association="Self.fk_cust_spr_inv_cust">
+      <End Role="tbl_CUSTOMER" EntitySet="tbl_CUSTOMER" />
+      <End Role="tbl_SPARE_INVOICE" EntitySet="tbl_SPARE_INVOICE" />
+    </AssociationSet>
+    <AssociationSet Name="fk_cust_spr_so_cust" Association="Self.fk_cust_spr_so_cust">
+      <End Role="tbl_CUSTOMER" EntitySet="tbl_CUSTOMER" />
+      <End Role="tbl_SPARE_SALE_ORDER" EntitySet="tbl_SPARE_SALE_ORDER" />
+    </AssociationSet>
+    <AssociationSet Name="fk_cust_type_cust" Association="Self.fk_cust_type_cust">
+      <End Role="tbl_CUSTOMER_TYPE" EntitySet="tbl_CUSTOMER_TYPE" />
+      <End Role="tbl_CUSTOMER" EntitySet="tbl_CUSTOMER" />
+    </AssociationSet>
+    <AssociationSet Name="fk_state_cust_add" Association="Self.fk_state_cust_add">
+      <End Role="tbl_STATE" EntitySet="tbl_STATE" />
+      <End Role="tbl_CUSTOMER_ADDRESS" EntitySet="tbl_CUSTOMER_ADDRESS" />
+    </AssociationSet>
+    <AssociationSet Name="fk_grp_proc_grp_id" Association="Self.fk_grp_proc_grp_id">
+      <End Role="tbl_GROUP" EntitySet="tbl_GROUP" />
+      <End Role="tbl_PROCESS" EntitySet="tbl_PROCESS" />
+    </AssociationSet>
+    <AssociationSet Name="fk_item_ty_spr_part" Association="Self.fk_item_ty_spr_part">
+      <End Role="tbl_ITEM_TYPE" EntitySet="tbl_ITEM_TYPE" />
+      <End Role="tbl_SPARE_PART" EntitySet="tbl_SPARE_PART" />
+    </AssociationSet>
+    <AssociationSet Name="fk_process_menu" Association="Self.fk_process_menu">
+      <End Role="tbl_PROCESS" EntitySet="tbl_PROCESS" />
+      <End Role="tbl_MENU" EntitySet="tbl_MENU" />
+    </AssociationSet>
+    <AssociationSet Name="fk_loc_part_mfrlocrkbn" Association="Self.fk_loc_part_mfrlocrkbn">
+      <End Role="tbl_STORAGE_LOC" EntitySet="tbl_STORAGE_LOC" />
+      <End Role="tbl_PART_MFR_LOC_RACK_BIN" EntitySet="tbl_PART_MFR_LOC_RACK_BIN" />
+    </AssociationSet>
+    <AssociationSet Name="fk_rack_part_mfrlcrkbn" Association="Self.fk_rack_part_mfrlcrkbn">
+      <End Role="tbl_RACK" EntitySet="tbl_RACK" />
+      <End Role="tbl_PART_MFR_LOC_RACK_BIN" EntitySet="tbl_PART_MFR_LOC_RACK_BIN" />
+    </AssociationSet>
+    <AssociationSet Name="fk_pay_mod_spr_so" Association="Self.fk_pay_mod_spr_so">
+      <End Role="tbl_PAYMENT_MODE" EntitySet="tbl_PAYMENT_MODE" />
+      <End Role="tbl_SPARE_SALE_ORDER" EntitySet="tbl_SPARE_SALE_ORDER" />
+    </AssociationSet>
+    <AssociationSet Name="fk_pay_mode_spr_inv" Association="Self.fk_pay_mode_spr_inv">
+      <End Role="tbl_PAYMENT_MODE" EntitySet="tbl_PAYMENT_MODE" />
+      <End Role="tbl_SPARE_INVOICE" EntitySet="tbl_SPARE_INVOICE" />
+    </AssociationSet>
+    <AssociationSet Name="fk_proc_perm_process" Association="Self.fk_proc_perm_process">
+      <End Role="tbl_PROCESS" EntitySet="tbl_PROCESS" />
+      <End Role="tbl_PERMISSION" EntitySet="tbl_PERMISSION" />
+    </AssociationSet>
+    <AssociationSet Name="fk_role_perm_role_id" Association="Self.fk_role_perm_role_id">
+      <End Role="tbl_ROLE" EntitySet="tbl_ROLE" />
+      <End Role="tbl_PERMISSION" EntitySet="tbl_PERMISSION" />
+    </AssociationSet>
+    <AssociationSet Name="fk_pick_slip_pick_slip_part" Association="Self.fk_pick_slip_pick_slip_part">
+      <End Role="tbl_PICK_SLIP" EntitySet="tbl_PICK_SLIP" />
+      <End Role="tbl_PICK_SLIP_PART" EntitySet="tbl_PICK_SLIP_PART" />
+    </AssociationSet>
+    <AssociationSet Name="fk_pkslip_pkslip_so" Association="Self.fk_pkslip_pkslip_so">
+      <End Role="tbl_PICK_SLIP" EntitySet="tbl_PICK_SLIP" />
+      <End Role="tbl_PICK_SLIP_SO" EntitySet="tbl_PICK_SLIP_SO" />
+    </AssociationSet>
+    <AssociationSet Name="fk_pkslip_spr_inv" Association="Self.fk_pkslip_spr_inv">
+      <End Role="tbl_PICK_SLIP" EntitySet="tbl_PICK_SLIP" />
+      <End Role="tbl_SPARE_INVOICE" EntitySet="tbl_SPARE_INVOICE" />
+    </AssociationSet>
+    <AssociationSet Name="fk_pkslp_part_pkslip_part_det" Association="Self.fk_pkslp_part_pkslip_part_det">
+      <End Role="tbl_PICK_SLIP_PART" EntitySet="tbl_PICK_SLIP_PART" />
+      <End Role="tbl_PICK_SLIP_PART_DET" EntitySet="tbl_PICK_SLIP_PART_DET" />
+    </AssociationSet>
+    <AssociationSet Name="fk_spr_so_pick_slip_part" Association="Self.fk_spr_so_pick_slip_part">
+      <End Role="tbl_SPARE_SALE_ORDER" EntitySet="tbl_SPARE_SALE_ORDER" />
+      <End Role="tbl_PICK_SLIP_PART" EntitySet="tbl_PICK_SLIP_PART" />
+    </AssociationSet>
+    <AssociationSet Name="fk_spr_so_pkslip_so" Association="Self.fk_spr_so_pkslip_so">
+      <End Role="tbl_SPARE_SALE_ORDER" EntitySet="tbl_SPARE_SALE_ORDER" />
+      <End Role="tbl_PICK_SLIP_SO" EntitySet="tbl_PICK_SLIP_SO" />
+    </AssociationSet>
+    <AssociationSet Name="fk_rack_spr_part_loc" Association="Self.fk_rack_spr_part_loc">
+      <End Role="tbl_RACK" EntitySet="tbl_RACK" />
+      <End Role="tbl_SPARE_PART_LOC" EntitySet="tbl_SPARE_PART_LOC" />
+    </AssociationSet>
+    <AssociationSet Name="fk_stor_loc_rack_stor_loc_id" Association="Self.fk_stor_loc_rack_stor_loc_id">
+      <End Role="tbl_STORAGE_LOC" EntitySet="tbl_STORAGE_LOC" />
+      <End Role="tbl_RACK" EntitySet="tbl_RACK" />
+    </AssociationSet>
+    <AssociationSet Name="fk_role_user_role_role_id" Association="Self.fk_role_user_role_role_id">
+      <End Role="tbl_ROLE" EntitySet="tbl_ROLE" />
+      <End Role="tbl_USER_ROLE" EntitySet="tbl_USER_ROLE" />
+    </AssociationSet>
+    <AssociationSet Name="fk_so_clos_rsn_sal_ord_part" Association="Self.fk_so_clos_rsn_sal_ord_part">
+      <End Role="tbl_SO_CLOSE_REASON" EntitySet="tbl_SO_CLOSE_REASON" />
+      <End Role="tbl_SPARE_SO_PART" EntitySet="tbl_SPARE_SO_PART" />
+    </AssociationSet>
+    <AssociationSet Name="fk_so_clos_rsn_spr_sal_ord" Association="Self.fk_so_clos_rsn_spr_sal_ord">
+      <End Role="tbl_SO_CLOSE_REASON" EntitySet="tbl_SO_CLOSE_REASON" />
+      <End Role="tbl_SPARE_SALE_ORDER" EntitySet="tbl_SPARE_SALE_ORDER" />
+    </AssociationSet>
+    <AssociationSet Name="fk_spr_part_spr_cost" Association="Self.fk_spr_part_spr_cost">
+      <End Role="tbl_SPARE_PART" EntitySet="tbl_SPARE_PART" />
+      <End Role="tbl_SPARE_COST" EntitySet="tbl_SPARE_COST" />
+    </AssociationSet>
+    <AssociationSet Name="fk_spr_inv_part_spr_part_det" Association="Self.fk_spr_inv_part_spr_part_det">
+      <End Role="tbl_SPARE_INVOICE_PART" EntitySet="tbl_SPARE_INVOICE_PART" />
+      <End Role="tbl_SPARE_INV_PART_DET" EntitySet="tbl_SPARE_INV_PART_DET" />
+    </AssociationSet>
+    <AssociationSet Name="fk_spare_inv_spare_inv_part" Association="Self.fk_spare_inv_spare_inv_part">
+      <End Role="tbl_SPARE_INVOICE" EntitySet="tbl_SPARE_INVOICE" />
+      <End Role="tbl_SPARE_INVOICE_PART" EntitySet="tbl_SPARE_INVOICE_PART" />
+    </AssociationSet>
+    <AssociationSet Name="fk_stor_loc_spr_inv" Association="Self.fk_stor_loc_spr_inv">
+      <End Role="tbl_STORAGE_LOC" EntitySet="tbl_STORAGE_LOC" />
+      <End Role="tbl_SPARE_INVOICE" EntitySet="tbl_SPARE_INVOICE" />
+    </AssociationSet>
+    <AssociationSet Name="fk_spr_sal_ord_spr_inv_part" Association="Self.fk_spr_sal_ord_spr_inv_part">
+      <End Role="tbl_SPARE_SALE_ORDER" EntitySet="tbl_SPARE_SALE_ORDER" />
+      <End Role="tbl_SPARE_INVOICE_PART" EntitySet="tbl_SPARE_INVOICE_PART" />
+    </AssociationSet>
+    <AssociationSet Name="fk_spr_part_spr_part_loc" Association="Self.fk_spr_part_spr_part_loc">
+      <End Role="tbl_SPARE_PART" EntitySet="tbl_SPARE_PART" />
+      <End Role="tbl_SPARE_PART_LOC" EntitySet="tbl_SPARE_PART_LOC" />
+    </AssociationSet>
+    <AssociationSet Name="fk_stor_loc_spr_part_loc" Association="Self.fk_stor_loc_spr_part_loc">
+      <End Role="tbl_STORAGE_LOC" EntitySet="tbl_STORAGE_LOC" />
+      <End Role="tbl_SPARE_PART_LOC" EntitySet="tbl_SPARE_PART_LOC" />
+    </AssociationSet>
+    <AssociationSet Name="fk_spr_po_spr_po_det" Association="Self.fk_spr_po_spr_po_det">
+      <End Role="tbl_SPARE_PO" EntitySet="tbl_SPARE_PO" />
+      <End Role="tbl_SPARE_PO_DET" EntitySet="tbl_SPARE_PO_DET" />
+    </AssociationSet>
+    <AssociationSet Name="fk_vend_spr_po" Association="Self.fk_vend_spr_po">
+      <End Role="tbl_VENDOR" EntitySet="tbl_VENDOR" />
+      <End Role="tbl_SPARE_PO" EntitySet="tbl_SPARE_PO" />
+    </AssociationSet>
+    <AssociationSet Name="fk_spr_so_spr_so_part" Association="Self.fk_spr_so_spr_so_part">
+      <End Role="tbl_SPARE_SALE_ORDER" EntitySet="tbl_SPARE_SALE_ORDER" />
+      <End Role="tbl_SPARE_SO_PART" EntitySet="tbl_SPARE_SO_PART" />
+    </AssociationSet>
+    <AssociationSet Name="fk_stor_loc_spr_sal_ord" Association="Self.fk_stor_loc_spr_sal_ord">
+      <End Role="tbl_STORAGE_LOC" EntitySet="tbl_STORAGE_LOC" />
+      <End Role="tbl_SPARE_SALE_ORDER" EntitySet="tbl_SPARE_SALE_ORDER" />
+    </AssociationSet>
+    <AssociationSet Name="fk_state_vendor" Association="Self.fk_state_vendor">
+      <End Role="tbl_STATE" EntitySet="tbl_STATE" />
+      <End Role="tbl_VENDOR" EntitySet="tbl_VENDOR" />
+    </AssociationSet>
+    <AssociationSet Name="fk_user_user_role" Association="Self.fk_user_user_role">
+      <End Role="tbl_USER" EntitySet="tbl_USER" />
+      <End Role="tbl_USER_ROLE" EntitySet="tbl_USER_ROLE" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
