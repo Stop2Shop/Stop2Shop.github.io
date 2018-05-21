@@ -3,42 +3,30 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Stop2ShopPL.Models;
 
 namespace Stop2ShopPL.Controllers
 {
-    public class HomeController : Controller
+    public class PurchaseController : Controller
     {
-        // GET: Home
+        // GET: Purchase
         public ActionResult Index()
         {
             return View();
         }
-        [HttpPost]
-        public ActionResult Login(FormCollection collection)
-        {
-            Session["userType"] = collection["rbCustomerType"];
-            return View();
-        }
-        //[HttpPost]
-        //public ActionResult Login(UserLogin user )
-        //{
-        //    return View();
-        //}
 
-        // GET: Home/Details/5
+        // GET: Purchase/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: Home/Create
+        // GET: Purchase/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Home/Create
+        // POST: Purchase/Create
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {
@@ -54,13 +42,13 @@ namespace Stop2ShopPL.Controllers
             }
         }
 
-        // GET: Home/Edit/5
+        // GET: Purchase/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: Home/Edit/5
+        // POST: Purchase/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -76,13 +64,13 @@ namespace Stop2ShopPL.Controllers
             }
         }
 
-        // GET: Home/Delete/5
+        // GET: Purchase/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: Home/Delete/5
+        // POST: Purchase/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {
