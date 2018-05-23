@@ -3,24 +3,53 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Shop2StopDAL;
+using Stop2ShopDAL;
+
 
 namespace Stop2ShopBL
 {
     public class UserDH
     {
-        Stop2ShopContext DbContext = new Stop2ShopContext();
+        CommonDal dal;
+        public UserDH()
+        {
+           dal = new CommonDal();
+        }
+       
+         
         public bool LoginValidate(string username, string EncryptPwd, int RoleId)
         {
-            var result = DbContext.Proc_UserAuthenticate(username, EncryptPwd, RoleId);
-            if (result != null)
+            bool result = false;
+            try
             {
-                return true;
+                result = dal.ValidateUser(username, EncryptPwd, RoleId);
             }
-            else
+            catch (Exception)
             {
-                return false;
+
+                result=false;
             }
+            return result;
+            
+            
         }
+
+        public string FetchRole(int roleId)
+        {
+            string role="";
+            try
+            {
+                role = dal.FetchRole(roleId);
+            }
+            catch (Exception e)
+            {
+
+                throw;
+            }
+
+            return role;
+        }
+
+
     }
 }

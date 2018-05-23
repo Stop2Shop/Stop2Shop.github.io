@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Shop2StopDAL
+namespace Stop2ShopDAL
 {
     using System;
     

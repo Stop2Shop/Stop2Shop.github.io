@@ -50,7 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="CommonDal.cs" />
     <Compile Include="Proc_UserAuthenticate_Result.cs">
       <DependentUpon>Stop2Shop.tt</DependentUpon>
     </Compile>

@@ -104,6 +104,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Authorization\AdminAuthorizeAttribute.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InvoiceController.cs" />
     <Compile Include="Controllers\PurchaseController.cs" />
@@ -140,6 +141,16 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Sales\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Shop2StopBL\Stop2ShopBL.csproj">
+      <Project>{a9002b72-1524-4d2e-824f-ec4458fa6bcc}</Project>
+      <Name>Stop2ShopBL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shop2StopCL\Stop2ShopCL.csproj">
+      <Project>{daac0dfc-cf77-4839-88c5-a5cf16f34b46}</Project>
+      <Name>Stop2ShopCL</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

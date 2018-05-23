@@ -17,7 +17,7 @@ namespace Stop2ShopPL.Controllers
         [HttpPost]
         public ActionResult Login(FormCollection collection)
         {
-            Session["userType"] = collection["rbCustomerType"];
+            Session["userRole"] = collection["rbCustomerType"];
             return View();
         }
         //[HttpPost]
