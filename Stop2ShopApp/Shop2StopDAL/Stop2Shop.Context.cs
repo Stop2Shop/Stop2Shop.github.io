@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Shop2StopDAL
+namespace Stop2ShopDAL
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class Stop2ShopContext : DbContext
     {
@@ -60,5 +62,22 @@ namespace Shop2StopDAL
         public virtual DbSet<tbl_USER> tbl_USER { get; set; }
         public virtual DbSet<tbl_USER_ROLE> tbl_USER_ROLE { get; set; }
         public virtual DbSet<tbl_VENDOR> tbl_VENDOR { get; set; }
+    
+        public virtual ObjectResult<Proc_UserAuthenticate_Result> Proc_UserAuthenticate(string in_UserId, string in_Password, Nullable<int> in_RoleId)
+        {
+            var in_UserIdParameter = in_UserId != null ?
+                new ObjectParameter("in_UserId", in_UserId) :
+                new ObjectParameter("in_UserId", typeof(string));
+    
+            var in_PasswordParameter = in_Password != null ?
+                new ObjectParameter("in_Password", in_Password) :
+                new ObjectParameter("in_Password", typeof(string));
+    
+            var in_RoleIdParameter = in_RoleId.HasValue ?
+                new ObjectParameter("in_RoleId", in_RoleId) :
+                new ObjectParameter("in_RoleId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Proc_UserAuthenticate_Result>("Proc_UserAuthenticate", in_UserIdParameter, in_PasswordParameter, in_RoleIdParameter);
+        }
     }
 }

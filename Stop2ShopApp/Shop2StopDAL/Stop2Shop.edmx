@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Stop2ShopModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Stop2ShopModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="tbl_AREA">
           <Key>
             <PropertyRef Name="AREA_ID" />
@@ -515,7 +515,7 @@
             <PropertyRef Name="USER_PROFILE_ID" />
           </Key>
           <Property Name="USER_PROFILE_ID" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="PASSWORD" Type="varchar" MaxLength="20" />
+          <Property Name="PASSWORD" Type="nvarchar" MaxLength="100" />
           <Property Name="ROWGUID" Type="uniqueidentifier" Nullable="false" />
         </EntityType>
         <EntityType Name="tbl_USER_ROLE">
@@ -1093,6 +1093,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="Proc_UserAuthenticate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="in_UserId" Type="nvarchar" Mode="In" />
+          <Parameter Name="in_Password" Type="nvarchar" Mode="In" />
+          <Parameter Name="in_RoleId" Type="int" Mode="In" />
+        </Function>
         <EntityContainer Name="Stop2ShopModelStoreContainer">
           <EntitySet Name="tbl_AREA" EntityType="Self.tbl_AREA" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_BIN" EntityType="Self.tbl_BIN" Schema="dbo" store:Type="Tables" />
@@ -1298,8 +1303,7 @@
             <End Role="tbl_SPARE_PO" EntitySet="tbl_SPARE_PO" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Stop2ShopModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -1892,7 +1896,7 @@
             <PropertyRef Name="USER_PROFILE_ID" />
           </Key>
           <Property Name="USER_PROFILE_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="PASSWORD" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PASSWORD" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="ROWGUID" Type="Guid" Nullable="false" />
           <NavigationProperty Name="tbl_USER_ROLE" Relationship="Self.fk_user_user_role" FromRole="tbl_USER" ToRole="tbl_USER_ROLE" />
         </EntityType>
@@ -2679,7 +2683,17 @@
             <End Role="tbl_USER" EntitySet="tbl_USER" />
             <End Role="tbl_USER_ROLE" EntitySet="tbl_USER_ROLE" />
           </AssociationSet>
+          <FunctionImport Name="Proc_UserAuthenticate" ReturnType="Collection(Stop2ShopModel.Proc_UserAuthenticate_Result)">
+            <Parameter Name="in_UserId" Mode="In" Type="String" />
+            <Parameter Name="in_Password" Mode="In" Type="String" />
+            <Parameter Name="in_RoleId" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
+        <ComplexType Name="Proc_UserAuthenticate_Result">
+          <Property Type="String" Name="USER_PROFILE_ID" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="PASSWORD" Nullable="true" MaxLength="100" />
+          <Property Type="Guid" Name="ROWGUID" Nullable="false" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -3237,6 +3251,15 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="Proc_UserAuthenticate" FunctionName="Stop2ShopModel.Store.Proc_UserAuthenticate">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Stop2ShopModel.Proc_UserAuthenticate_Result">
+                <ScalarProperty Name="USER_PROFILE_ID" ColumnName="USER_PROFILE_ID" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="ROWGUID" ColumnName="ROWGUID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

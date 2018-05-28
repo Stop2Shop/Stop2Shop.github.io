@@ -69,3 +69,16 @@ E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopPL\obj\Debug\Stop2ShopPL.
 E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopPL\obj\Debug\Stop2ShopPL.csproj.CopyComplete
 E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopPL\obj\Debug\Stop2ShopPL.dll
 E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopPL\obj\Debug\Stop2ShopPL.pdb
+E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopPL\bin\Shop2StopBL.dll
+E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopPL\bin\Shop2StopCL.dll
+E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopPL\bin\Shop2StopDAL.dll
+E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopPL\bin\EntityFramework.dll
+E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopPL\bin\Shop2StopBL.pdb
+E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopPL\bin\Shop2StopBL.dll.config
+E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopPL\bin\Shop2StopCL.pdb
+E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopPL\bin\Shop2StopDAL.pdb
+E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopPL\bin\Shop2StopDAL.dll.config
+E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopPL\bin\EntityFramework.xml
+E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopPL\bin\Log4Net.config
+E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopPL\bin\log4net.dll
+E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopPL\bin\log4net.xml

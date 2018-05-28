@@ -1,0 +1,11 @@
+F:\Working\Stop2ShopApp\Shop2StopDAL\bin\Release\Shop2StopDAL.dll.config
+F:\Working\Stop2ShopApp\Shop2StopDAL\bin\Release\Shop2StopDAL.dll
+F:\Working\Stop2ShopApp\Shop2StopDAL\bin\Release\Shop2StopDAL.pdb
+F:\Working\Stop2ShopApp\Shop2StopDAL\bin\Release\EntityFramework.dll
+F:\Working\Stop2ShopApp\Shop2StopDAL\bin\Release\EntityFramework.SqlServer.dll
+F:\Working\Stop2ShopApp\Shop2StopDAL\bin\Release\EntityFramework.xml
+F:\Working\Stop2ShopApp\Shop2StopDAL\bin\Release\EntityFramework.SqlServer.xml
+F:\Working\Stop2ShopApp\Shop2StopDAL\obj\Release\Stop2ShopDAL.csproj.CoreCompileInputs.cache
+F:\Working\Stop2ShopApp\Shop2StopDAL\obj\Release\Stop2ShopDAL.csproj.CopyComplete
+F:\Working\Stop2ShopApp\Shop2StopDAL\obj\Release\Shop2StopDAL.dll
+F:\Working\Stop2ShopApp\Shop2StopDAL\obj\Release\Shop2StopDAL.pdb
