@@ -21,7 +21,6 @@ F:\Working\Stop2ShopApp\Shop2StopBL\obj\Debug\Stop2ShopBL.csproj.CopyComplete
 E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Shop2StopBL\bin\Debug\Shop2StopBL.dll.config
 E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Shop2StopBL\bin\Debug\EntityFramework.dll
 E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Shop2StopBL\bin\Debug\EntityFramework.SqlServer.dll
-E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Shop2StopBL\bin\Debug\Shop2StopDAL.dll
 E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Shop2StopBL\bin\Debug\Shop2StopDAL.pdb
 E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Shop2StopBL\bin\Debug\Shop2StopDAL.dll.config
 E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Shop2StopBL\bin\Debug\EntityFramework.xml
