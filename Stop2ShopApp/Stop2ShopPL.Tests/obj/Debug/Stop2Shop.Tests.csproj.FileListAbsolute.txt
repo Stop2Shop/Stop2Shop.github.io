@@ -12,3 +12,5 @@ E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopPL.Tests\obj\Debug\Stop2S
 E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopPL.Tests\obj\Debug\Stop2Shop.Tests.csproj.CopyComplete
 E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopPL.Tests\obj\Debug\Stop2ShopPL.Tests.dll
 E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopPL.Tests\obj\Debug\Stop2ShopPL.Tests.pdb
+E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopPL.Tests\bin\Debug\log4net.dll
+E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopPL.Tests\bin\Debug\log4net.xml

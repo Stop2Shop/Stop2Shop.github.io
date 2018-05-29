@@ -7,8 +7,8 @@
     <ProjectGuid>{DAAC0DFC-CF77-4839-88C5-A5CF16F34B46}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Shop2StopCL</RootNamespace>
-    <AssemblyName>Shop2StopCL</AssemblyName>
+    <RootNamespace>Stop2ShopCL</RootNamespace>
+    <AssemblyName>Stop2ShopCL</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -46,8 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DatabaseUtills.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoleDO.cs" />
+    <Compile Include="UserDO.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

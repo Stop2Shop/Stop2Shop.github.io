@@ -7,8 +7,8 @@
     <ProjectGuid>{A9002B72-1524-4D2E-824F-EC4458FA6BCC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Shop2StopBL</RootNamespace>
-    <AssemblyName>Shop2StopBL</AssemblyName>
+    <RootNamespace>Stop2ShopBL</RootNamespace>
+    <AssemblyName>Stop2ShopBL</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -55,7 +55,8 @@
   <ItemGroup>
     <Compile Include="CommonUtills.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserDH.cs" />
+    <Compile Include="RoleManager.cs" />
+    <Compile Include="UserManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -65,9 +66,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Shop2StopDAL\Stop2ShopDAL.csproj">
-      <Project>{2d356afa-8a2c-416c-adb7-be58fa093961}</Project>
-      <Name>Stop2ShopDAL</Name>
+    <ProjectReference Include="..\Stop2ShopCL\Stop2ShopCL.csproj">
+      <Project>{194f9b25-330c-49d7-8b94-0912649eee03}</Project>
+      <Name>Stop2ShopCL</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

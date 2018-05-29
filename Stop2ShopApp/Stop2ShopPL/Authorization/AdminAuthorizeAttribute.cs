@@ -9,10 +9,10 @@ namespace Stop2ShopPL.Authorization
 {
     public class AdminAuthorizeAttribute: AuthorizeAttribute
     {
-        DatabaseUtills dbUtils;
+        //DatabaseUtills dbUtils;
         public AdminAuthorizeAttribute()
         {
-            dbUtils = new DatabaseUtills();
+           // dbUtils = new DatabaseUtills();
         }
         //Default url for unauthorize access
         private string notifyUrl = "/Home/Index";
@@ -36,7 +36,8 @@ namespace Stop2ShopPL.Authorization
                 else
                 {
                     //Check if the user is an admin
-                    var role=dbUtils.FetchRole(Convert.ToInt32( roleId));
+                    //var role=dbUtils.FetchRole(Convert.ToInt32( roleId));
+                    var role = "Admin";
                     if (role == "Admin")
                         status = true;
                     else

@@ -1,0 +1,14 @@
+E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopDAL\bin\Debug\Stop2ShopDAL.dll.config
+E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopDAL\bin\Debug\Stop2ShopDAL.dll
+E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopDAL\bin\Debug\Stop2ShopDAL.pdb
+E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopDAL\bin\Debug\EntityFramework.dll
+E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopDAL\bin\Debug\EntityFramework.SqlServer.dll
+E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopDAL\bin\Debug\Stop2ShopCL.dll
+E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopDAL\bin\Debug\Stop2ShopCL.pdb
+E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopDAL\bin\Debug\EntityFramework.xml
+E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopDAL\bin\Debug\EntityFramework.SqlServer.xml
+E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopDAL\obj\Debug\Stop2ShopDAL.csprojResolveAssemblyReference.cache
+E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopDAL\obj\Debug\Stop2ShopDAL.csproj.CoreCompileInputs.cache
+E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopDAL\obj\Debug\Stop2ShopDAL.csproj.CopyComplete
+E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopDAL\obj\Debug\Stop2ShopDAL.dll
+E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopDAL\obj\Debug\Stop2ShopDAL.pdb

@@ -10,7 +10,7 @@ namespace Stop2ShopPL.Models
     public class UserLogin
     {
         [ScaffoldColumn(false)]
-        public string UserType { get; set; }
+        public int UserType { get; set; }
         [Required(ErrorMessage ="Please enter Email Id")]
         [DataType(DataType.EmailAddress,ErrorMessage ="Please enter a valid Email Id")]
         public String EmailId { get; set; }

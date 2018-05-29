@@ -1,9 +1,5 @@
-E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Shop2StopCL\bin\Debug\Shop2StopCL.dll
-E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Shop2StopCL\bin\Debug\Shop2StopCL.pdb
 E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Shop2StopCL\obj\Debug\Stop2ShopCL.csprojResolveAssemblyReference.cache
 E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Shop2StopCL\obj\Debug\Stop2ShopCL.csproj.CoreCompileInputs.cache
-E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Shop2StopCL\obj\Debug\Shop2StopCL.dll
-E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Shop2StopCL\obj\Debug\Shop2StopCL.pdb
 F:\Working\Stop2ShopApp\Shop2StopCL\bin\Debug\Shop2StopCL.dll
 F:\Working\Stop2ShopApp\Shop2StopCL\bin\Debug\Shop2StopCL.pdb
 F:\Working\Stop2ShopApp\Shop2StopCL\bin\Debug\Shop2StopBL.dll
@@ -30,3 +26,7 @@ E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Shop2StopCL\bin\Debug\EntityFramew
 E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Shop2StopCL\obj\Debug\Stop2ShopCL.csproj.CopyComplete
 E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Shop2StopCL\bin\Debug\log4net.dll
 E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Shop2StopCL\bin\Debug\log4net.xml
+E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Shop2StopCL\bin\Debug\Stop2ShopCL.dll
+E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Shop2StopCL\bin\Debug\Stop2ShopCL.pdb
+E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Shop2StopCL\obj\Debug\Stop2ShopCL.dll
+E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Shop2StopCL\obj\Debug\Stop2ShopCL.pdb

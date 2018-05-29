@@ -36,16 +36,32 @@ namespace Stop2ShopPL.Controllers
         [HttpPost]
         public ActionResult Login(FormCollection collection)
         {
-            Session["userRole"] = collection["rbCustomerType"];
+            ViewBag.userRole=Convert.ToInt32( collection["rbCustomerType"]);
             return View();
         }
-        //[HttpPost]
-        //public ActionResult Login(UserLogin user )
-        //{
-        //    return View();
-        //}
+        [HttpPost]
+        public ActionResult LoginValidate(UserLogin user)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
 
-        // GET: Home/Details/5
+                }
+                else
+                {
+                    return RedirectToAction("Login");
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            return View();
+        }
+
+        //GET: Home/Details/5
         public ActionResult Details(int id)
         {
             return View();

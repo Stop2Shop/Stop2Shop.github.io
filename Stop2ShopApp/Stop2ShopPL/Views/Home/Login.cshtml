@@ -1,4 +1,4 @@
-﻿
+﻿@model Stop2ShopPL.Models.UserLogin
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('login').click();
@@ -10,24 +10,43 @@
         <a  id="login" data-toggle="dropdown" class="nav-link dropdown-toggle" href="#">Login</a>
         <ul class="dropdown-menu form-wrapper">
             <li>
-                <form action="/examples/actions/confirmation.php" method="post">
-                    @*<p class="hint-text">Sign in with your social media account</p>
-                    <div class="form-group social-btn clearfix">
-                        <a href="#" class="btn btn-primary pull-left"><i class="fa fa-facebook"></i> Facebook</a>
-                        <a href="#" class="btn btn-info pull-right"><i class="fa fa-twitter"></i> Twitter</a>
-                    </div>*@
-                    @*<div class="or-seperator"><b>or</b></div>*@
-                    <div  class="form-group " >
-                        <input type="text" class="form-control" placeholder="Username" required="required">
+                @*<form action="/examples/actions/confirmation.php" method="post">
+        <p class="hint-text">Sign in with your social media account</p>
+        <div class="form-group social-btn clearfix">
+            <a href="#" class="btn btn-primary pull-left"><i class="fa fa-facebook"></i> Facebook</a>
+            <a href="#" class="btn btn-info pull-right"><i class="fa fa-twitter"></i> Twitter</a>
+        </div>
+                <div class="or-seperator"><b>or</b></div>
+                <div  class="form-group " >
+                <input type="text" class="form-control" placeholder="Username" required="required">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" placeholder="Password" required="required">
+            </div>
+            <input type="submit" class="btn btn-primary btn-block" value="Login">
+            <div class="form-footer">
+                <a href="#">Forgot Your password?</a>
+            </div>
+        </form>*@
+
+                @using (Html.BeginForm("LoginValidate", "Home"))
+                {
+                   
+                        
+                   
+                        @Html.HiddenFor(m => m.UserType, new { value= "@ViewBag.userRole" })
+                    <div class="form-group">
+                        @Html.TextBoxFor(m => m.EmailId, new { placeholder= "Username", @class = "form-control" })
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Password" required="required">
+                        @Html.TextBoxFor(m => m.Password, new {placeholder= "Password", @class = "form-control" , })
                     </div>
-                    <input type="submit" class="btn btn-primary btn-block" value="Login">
+                    <input type="submit" class="btn btn-primary btn-block" value="Login"/>
                     <div class="form-footer">
                         <a href="#">Forgot Your password?</a>
                     </div>
-                </form>
+
+                }
             </li>
         </ul>
     </li>

@@ -3,7 +3,7 @@
 
 <ul class="nav navbar-nav navbar-right ml-auto">
     <li class="nav-item">
-        <a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#">Login</a>
+        <a data-toggle="dropdown" class="nav-link dropdown-toggle " href="#">Login</a>
         <ul class="dropdown-menu form-wrapper">
             <li>
 
@@ -11,22 +11,22 @@
                 @using (Html.BeginForm("Login", "Home", FormMethod.Post))
                 {
                     <div class="form-group">
-                        @Html.RadioButton("rbCustomerType", "Customer", isChecked: true) @Html.Label("Customer")
+                        @Html.RadioButton("rbCustomerType", "2", isChecked: true) @Html.Label("Customer")
                         <hr />
 
              
 
                     </div>
                     <div class="form-group">
-                        @Html.RadioButton("rbCustomerType", "Seller", isChecked: false) @Html.Label("Seller")
+                        @Html.RadioButton("rbCustomerType", "3", isChecked: false) @Html.Label("Seller")
                         <hr />
                     </div>
                     <div class="form-group">
-                        @Html.RadioButton("rbCustomerType", "Supplier", isChecked: false) @Html.Label("Supplier")
+                        @Html.RadioButton("rbCustomerType", "4", isChecked: false) @Html.Label("Supplier")
                         <hr />
                     </div>
   
-                <input type="submit" value="Get Started" />
+                <input type="submit" class="btn btn-primary" value="Get Started" />
 
                 }
             </li>

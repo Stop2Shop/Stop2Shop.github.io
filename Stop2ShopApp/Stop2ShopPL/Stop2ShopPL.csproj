@@ -137,6 +137,7 @@
     <Content Include="Views\Shared\_SupplierLayout.cshtml" />
     <Content Include="Views\Invoice\Index.cshtml" />
     <Content Include="Views\Purchase\Index.cshtml" />
+    <Content Include="Views\Home\View.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -149,12 +150,8 @@
     <Folder Include="Views\Sales\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Shop2StopBL\Stop2ShopBL.csproj">
-      <Project>{a9002b72-1524-4d2e-824f-ec4458fa6bcc}</Project>
-      <Name>Stop2ShopBL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Shop2StopCL\Stop2ShopCL.csproj">
-      <Project>{daac0dfc-cf77-4839-88c5-a5cf16f34b46}</Project>
+    <ProjectReference Include="..\Stop2ShopCL\Stop2ShopCL.csproj">
+      <Project>{194f9b25-330c-49d7-8b94-0912649eee03}</Project>
       <Name>Stop2ShopCL</Name>
     </ProjectReference>
   </ItemGroup>

@@ -7,8 +7,8 @@
     <ProjectGuid>{2D356AFA-8A2C-416C-ADB7-BE58FA093961}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Shop2StopDAL</RootNamespace>
-    <AssemblyName>Shop2StopDAL</AssemblyName>
+    <RootNamespace>Stop2ShopDAL</RootNamespace>
+    <AssemblyName>Stop2ShopDAL</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -54,158 +54,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommonDal.cs" />
-    <Compile Include="Proc_UserAuthenticate_Result.cs">
-      <DependentUpon>Stop2Shop.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Stop2Shop.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Stop2Shop.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Stop2Shop.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Stop2Shop.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Stop2Shop.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Stop2Shop.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_AREA.cs">
-      <DependentUpon>Stop2Shop.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_BIN.cs">
-      <DependentUpon>Stop2Shop.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_CUSTOMER.cs">
-      <DependentUpon>Stop2Shop.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_CUSTOMER_ADDRESS.cs">
-      <DependentUpon>Stop2Shop.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_CUSTOMER_TYPE.cs">
-      <DependentUpon>Stop2Shop.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_GROUP.cs">
-      <DependentUpon>Stop2Shop.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_ID_TABLE.cs">
-      <DependentUpon>Stop2Shop.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_ITEM_TYPE.cs">
-      <DependentUpon>Stop2Shop.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_MENU.cs">
-      <DependentUpon>Stop2Shop.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_PART_MFR_LOC_RACK_BIN.cs">
-      <DependentUpon>Stop2Shop.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_PAYMENT_MODE.cs">
-      <DependentUpon>Stop2Shop.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_PERMISSION.cs">
-      <DependentUpon>Stop2Shop.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_PICK_SLIP.cs">
-      <DependentUpon>Stop2Shop.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_PICK_SLIP_PART.cs">
-      <DependentUpon>Stop2Shop.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_PICK_SLIP_PART_DET.cs">
-      <DependentUpon>Stop2Shop.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_PICK_SLIP_SO.cs">
-      <DependentUpon>Stop2Shop.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_PROCESS.cs">
-      <DependentUpon>Stop2Shop.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_RACK.cs">
-      <DependentUpon>Stop2Shop.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_ROLE.cs">
-      <DependentUpon>Stop2Shop.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_SO_CLOSE_REASON.cs">
-      <DependentUpon>Stop2Shop.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_SPARE_COST.cs">
-      <DependentUpon>Stop2Shop.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_SPARE_INVOICE.cs">
-      <DependentUpon>Stop2Shop.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_SPARE_INVOICE_PART.cs">
-      <DependentUpon>Stop2Shop.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_SPARE_INV_PART_DET.cs">
-      <DependentUpon>Stop2Shop.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_SPARE_PART.cs">
-      <DependentUpon>Stop2Shop.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_SPARE_PART_LOC.cs">
-      <DependentUpon>Stop2Shop.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_SPARE_PO.cs">
-      <DependentUpon>Stop2Shop.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_SPARE_PO_DET.cs">
-      <DependentUpon>Stop2Shop.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_SPARE_SALE_ORDER.cs">
-      <DependentUpon>Stop2Shop.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_SPARE_SO_PART.cs">
-      <DependentUpon>Stop2Shop.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_STATE.cs">
-      <DependentUpon>Stop2Shop.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_STORAGE_LOC.cs">
-      <DependentUpon>Stop2Shop.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_USER.cs">
-      <DependentUpon>Stop2Shop.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_USER_ROLE.cs">
-      <DependentUpon>Stop2Shop.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_VENDOR.cs">
-      <DependentUpon>Stop2Shop.tt</DependentUpon>
-    </Compile>
+    <Compile Include="RoleDH.cs" />
+    <Compile Include="UserDH.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config">
       <SubType>Designer</SubType>
     </None>
-    <EntityDeploy Include="Stop2Shop.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Stop2Shop.Designer.cs</LastGenOutput>
-    </EntityDeploy>
     <None Include="packages.config" />
-    <None Include="Stop2Shop.edmx.diagram">
-      <DependentUpon>Stop2Shop.edmx</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Stop2Shop.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Stop2Shop.edmx</DependentUpon>
-      <LastGenOutput>Stop2Shop.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Stop2Shop.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Stop2Shop.edmx</DependentUpon>
-      <LastGenOutput>Stop2Shop.cs</LastGenOutput>
-    </Content>
+    <ProjectReference Include="..\Stop2ShopCL\Stop2ShopCL.csproj">
+      <Project>{194f9b25-330c-49d7-8b94-0912649eee03}</Project>
+      <Name>Stop2ShopCL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
