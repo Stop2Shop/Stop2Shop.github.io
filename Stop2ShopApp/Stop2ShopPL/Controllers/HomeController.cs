@@ -65,7 +65,7 @@ namespace Stop2ShopPL.Controllers
                     {
                         Session["UserId"] = _UserDO.EmailId;
                         Session["UserRole"] = _RoleManager.FetchRole(_RoleDO);
-                        return View();
+                        return View("Home");
                     }
                     else
                     {
