@@ -70,7 +70,9 @@ namespace Stop2ShopPL.Controllers
                     else
                     {
                         ModelState.AddModelError("", "Login Authentication Failed");
-                        return View("Login");
+                        UserLogin _UserLogin = new UserLogin();
+                        _UserLogin.UserType = Convert.ToInt16(user.UserType);
+                        return View("Login", _UserLogin);
                     }
                 }
                 else
