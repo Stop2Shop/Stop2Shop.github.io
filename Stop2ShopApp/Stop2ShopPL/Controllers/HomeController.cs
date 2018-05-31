@@ -23,14 +23,14 @@ namespace Stop2ShopPL.Controllers
         {
             try
             {
-                
+
             }
             catch (Exception e)
             {
-                
+
                 logger.Error(e);
 
-                
+
             }
             return View();
 
@@ -38,23 +38,26 @@ namespace Stop2ShopPL.Controllers
         [HttpPost]
         public ActionResult Login(FormCollection collection)
         {
+
             UserLogin _UserLogin = new UserLogin();
-            _UserLogin.UserType = Convert.ToInt32( collection["rbCustomerType"]);
+            _UserLogin.UserType = Convert.ToInt32(collection["rbCustomerType"]);
             return View(_UserLogin);
+
+
         }
         [HttpPost]
         public ActionResult LoginValidate(UserLogin user)
         {
             try
             {
-                if(ModelState.IsValid)
+                if (ModelState.IsValid)
                 {
                     UserDO _UserDO = new UserDO();
                     RoleDO _RoleDO = new RoleDO();
                     _UserDO.EmailId = user.EmailId;
                     _UserDO.Password = user.Password;
-                    _UserDO.RoleId =  user.UserType;
-                    _RoleDO.ROLE_ID =  Convert.ToInt16(_UserDO.RoleId);
+                    _UserDO.RoleId = user.UserType;
+                    _RoleDO.ROLE_ID = Convert.ToInt16(_UserDO.RoleId);
                     UserManager _UserManager = new UserManager();
                     RoleManager _RoleManager = new RoleManager();
                     bool IsAuthenticated = _UserManager.LoginValidate(_UserDO);
@@ -72,7 +75,9 @@ namespace Stop2ShopPL.Controllers
                 }
                 else
                 {
-                    return View("Login");
+                    UserLogin _UserLogin = new UserLogin();
+                    _UserLogin.UserType = Convert.ToInt16(user.UserType);
+                    return View("Login", _UserLogin);
                 }
             }
             catch (Exception)
