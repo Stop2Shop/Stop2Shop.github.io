@@ -12,3 +12,17 @@ E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopDAL\obj\Debug\Stop2ShopDA
 E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopDAL\obj\Debug\Stop2ShopDAL.csproj.CopyComplete
 E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopDAL\obj\Debug\Stop2ShopDAL.dll
 E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopDAL\obj\Debug\Stop2ShopDAL.pdb
+F:\Stop2ShopGit\Stop2ShopDAL\bin\Debug\Stop2ShopDAL.dll.config
+F:\Stop2ShopGit\Stop2ShopDAL\bin\Debug\Stop2ShopDAL.dll
+F:\Stop2ShopGit\Stop2ShopDAL\bin\Debug\Stop2ShopDAL.pdb
+F:\Stop2ShopGit\Stop2ShopDAL\bin\Debug\EntityFramework.dll
+F:\Stop2ShopGit\Stop2ShopDAL\bin\Debug\EntityFramework.SqlServer.dll
+F:\Stop2ShopGit\Stop2ShopDAL\bin\Debug\Stop2ShopCL.dll
+F:\Stop2ShopGit\Stop2ShopDAL\bin\Debug\Stop2ShopCL.pdb
+F:\Stop2ShopGit\Stop2ShopDAL\bin\Debug\EntityFramework.xml
+F:\Stop2ShopGit\Stop2ShopDAL\bin\Debug\EntityFramework.SqlServer.xml
+F:\Stop2ShopGit\Stop2ShopDAL\obj\Debug\Stop2ShopDAL.csprojAssemblyReference.cache
+F:\Stop2ShopGit\Stop2ShopDAL\obj\Debug\Stop2ShopDAL.csproj.CoreCompileInputs.cache
+F:\Stop2ShopGit\Stop2ShopDAL\obj\Debug\Stop2ShopDAL.csproj.CopyComplete
+F:\Stop2ShopGit\Stop2ShopDAL\obj\Debug\Stop2ShopDAL.dll
+F:\Stop2ShopGit\Stop2ShopDAL\obj\Debug\Stop2ShopDAL.pdb

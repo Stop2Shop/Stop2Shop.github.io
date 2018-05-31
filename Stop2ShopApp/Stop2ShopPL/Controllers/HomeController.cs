@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Stop2ShopPL.Models;
+using Stop2ShopBL;
+using Stop2ShopCL;
 
 namespace Stop2ShopPL.Controllers
 {
@@ -36,21 +38,41 @@ namespace Stop2ShopPL.Controllers
         [HttpPost]
         public ActionResult Login(FormCollection collection)
         {
-            ViewBag.userRole=Convert.ToInt32( collection["rbCustomerType"]);
-            return View();
+            UserLogin _UserLogin = new UserLogin();
+            _UserLogin.UserType = Convert.ToInt32( collection["rbCustomerType"]);
+            return View(_UserLogin);
         }
         [HttpPost]
         public ActionResult LoginValidate(UserLogin user)
         {
             try
             {
-                if (ModelState.IsValid)
+                if(ModelState.IsValid)
                 {
-
+                    UserDO _UserDO = new UserDO();
+                    RoleDO _RoleDO = new RoleDO();
+                    _UserDO.EmailId = user.EmailId;
+                    _UserDO.Password = user.Password;
+                    _UserDO.RoleId =  user.UserType;
+                    _RoleDO.ROLE_ID =  Convert.ToInt16(_UserDO.RoleId);
+                    UserManager _UserManager = new UserManager();
+                    RoleManager _RoleManager = new RoleManager();
+                    bool IsAuthenticated = _UserManager.LoginValidate(_UserDO);
+                    if (IsAuthenticated)
+                    {
+                        Session["UserId"] = _UserDO.EmailId;
+                        Session["UserRole"] = _RoleManager.FetchRole(_RoleDO);
+                        return View();
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("", "Login Authentication Failed");
+                        return View("Login");
+                    }
                 }
                 else
                 {
-                    return RedirectToAction("Login");
+                    return View("Login");
                 }
             }
             catch (Exception)
@@ -58,7 +80,6 @@ namespace Stop2ShopPL.Controllers
 
                 throw;
             }
-            return View();
         }
 
         //GET: Home/Details/5

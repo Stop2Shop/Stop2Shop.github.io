@@ -31,21 +31,25 @@
 
                 @using (Html.BeginForm("LoginValidate", "Home"))
                 {
-                   
-                        
-                   
-                        @Html.HiddenFor(m => m.UserType, new { value= "@ViewBag.userRole" })
+                    @Html.AntiForgeryToken()
+                    @Html.HiddenFor(model=>model.UserType,new { value=Model.UserType })
+                <div class="form-horizontal">
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
                     <div class="form-group">
-                        @Html.TextBoxFor(m => m.EmailId, new { placeholder= "Username", @class = "form-control" })
+                        @Html.TextBoxFor(m => m.EmailId, new { placeholder = "Username", @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.EmailId, "", new { @class = "text-danger" })
                     </div>
                     <div class="form-group">
-                        @Html.TextBoxFor(m => m.Password, new {placeholder= "Password", @class = "form-control" , })
+                        @Html.TextBoxFor(m => m.Password, new { placeholder = "Password", @class = "form-control", })
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
                     </div>
-                    <input type="submit" class="btn btn-primary btn-block" value="Login"/>
+                    <input type="submit" class="btn btn-primary btn-block" value="Login" />
                     <div class="form-footer">
                         <a href="#">Forgot Your password?</a>
                     </div>
-
+                </div>
+                    
                 }
             </li>
         </ul>

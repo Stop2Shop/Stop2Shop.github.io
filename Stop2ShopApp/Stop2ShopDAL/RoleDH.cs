@@ -9,10 +9,10 @@ namespace Stop2ShopDAL
 {
     public class RoleDH
     {
-        Stop2ShopContext context;
+        Stop2ShopEntities context;
         public RoleDH()
         {
-            context = new Stop2ShopContext();
+            context = new Stop2ShopEntities();
         }
         public string FetchRole(RoleDO _RoleDO)
         {

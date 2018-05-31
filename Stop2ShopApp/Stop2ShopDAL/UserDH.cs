@@ -9,10 +9,10 @@ namespace Stop2ShopDAL
 {
     public class UserDH
     {
-        Stop2ShopContext context;
+        Stop2ShopEntities context;
         public UserDH()
         {
-            context = new Stop2ShopContext();
+            context = new Stop2ShopEntities();
         }
         public bool ValidateUser(UserDO _UserDo)
         {
