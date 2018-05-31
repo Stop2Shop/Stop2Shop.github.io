@@ -4,3 +4,8 @@ E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopCL\obj\Debug\Stop2ShopCL.
 E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopCL\obj\Debug\Stop2ShopCL.csproj.CoreCompileInputs.cache
 E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopCL\obj\Debug\Stop2ShopCL.dll
 E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopCL\obj\Debug\Stop2ShopCL.pdb
+F:\Stop2ShopGit\Stop2ShopCL\bin\Debug\Stop2ShopCL.dll
+F:\Stop2ShopGit\Stop2ShopCL\bin\Debug\Stop2ShopCL.pdb
+F:\Stop2ShopGit\Stop2ShopCL\obj\Debug\Stop2ShopCL.csproj.CoreCompileInputs.cache
+F:\Stop2ShopGit\Stop2ShopCL\obj\Debug\Stop2ShopCL.dll
+F:\Stop2ShopGit\Stop2ShopCL\obj\Debug\Stop2ShopCL.pdb

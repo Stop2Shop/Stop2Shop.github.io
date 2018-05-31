@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "";
+    if (Session["UserRole"].ToString() == "Admin")
+    {
+        Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    }
+    else if (Session["UserRole"].ToString() == "Customer")
+    {
+        Layout = "~/Views/Shared/_SellerLayout.cshtml";
+    }
+    else if (Session["UserRole"].ToString() == "Seller")
+    {
+        Layout = "~/Views/Shared/_SellerLayout.cshtml";
+    }
+    else if (Session["UserRole"].ToString() == "Supplier")
+    {
+        Layout = "~/Views/Shared/_SupplierLayout.cshtml";
+    }
+}
+
+
+
