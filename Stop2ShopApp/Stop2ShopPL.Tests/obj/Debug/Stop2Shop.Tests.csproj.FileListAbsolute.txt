@@ -3,8 +3,10 @@ E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopPL.Tests\bin\Debug\Micros
 E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopPL.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
 E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopPL.Tests\bin\Debug\Stop2ShopPL.Tests.dll
 E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopPL.Tests\bin\Debug\Stop2ShopPL.Tests.pdb
+E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopPL.Tests\bin\Debug\log4net.dll
 E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopPL.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
 E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopPL.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopPL.Tests\bin\Debug\log4net.xml
 E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopPL.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
 E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopPL.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
 E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopPL.Tests\obj\Debug\Stop2Shop.Tests.csprojResolveAssemblyReference.cache
@@ -12,5 +14,3 @@ E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopPL.Tests\obj\Debug\Stop2S
 E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopPL.Tests\obj\Debug\Stop2Shop.Tests.csproj.CopyComplete
 E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopPL.Tests\obj\Debug\Stop2ShopPL.Tests.dll
 E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopPL.Tests\obj\Debug\Stop2ShopPL.Tests.pdb
-E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopPL.Tests\bin\Debug\log4net.dll
-E:\Stop2Shop\Stop2Shop.github.io\Stop2ShopApp\Stop2ShopPL.Tests\bin\Debug\log4net.xml

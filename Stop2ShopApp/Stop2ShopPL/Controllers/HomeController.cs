@@ -36,8 +36,10 @@ namespace Stop2ShopPL.Controllers
         [HttpPost]
         public ActionResult Login(FormCollection collection)
         {
-            ViewBag.userRole=Convert.ToInt32( collection["rbCustomerType"]);
-            return View();
+            UserLogin userObj = new UserLogin();
+            userObj.UserType= Convert.ToInt32(collection["rbCustomerType"]);
+            //ViewBag.userRole=Convert.ToInt32( collection["rbCustomerType"]);
+            return View(userObj);
         }
         [HttpPost]
         public ActionResult LoginValidate(UserLogin user)
@@ -50,7 +52,7 @@ namespace Stop2ShopPL.Controllers
                 }
                 else
                 {
-                    return RedirectToAction("Login");
+                    return RedirectToAction("Index");
                 }
             }
             catch (Exception)
